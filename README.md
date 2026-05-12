@@ -22,6 +22,43 @@ Son fondateur est de Lyon, et a décidé d’implanter les locaux dans sa ville 
 "schéma draw.io"
 
 
+
+
+
+### Objectifs finaux
+
+- Fournir un plan d'adressage réseau complet cohérent :
+	- Configuration IP de LAN/VLAN
+	- Configuration IP des matériels réseaux
+- Fournir un plan schématique du futur réseau :
+	- Nom des matériels
+	- Configuration IP
+- Faire la liste des serveurs/matériels nécessaires à l'élaboration de la future infrastructure réseau
+- Mettre en place une nomenclature de nom :
+	- Serveurs
+	- Ordinateurs clients
+	- Utilisateurs
+	- Groupes
+	- ...
+- Création de VM serveur / client
+	- Configuration ?
+	- OS ?
+	- Fonction / rôle ?
+- Création d'un domaine
+	- Nom du domaine AD
+	- Configuration
+- Création des OU correspondant aux différents service de la société
+	- OU de départements
+	- OU de services
+- Création des groupes correspondant aux différents groupes d'utilisateurs de la société
+	- Groupes de départements
+	- Groupes de services
+	- Groupes fonctionnels
+	- Groupes de sécurité
+- Intégration des données dans l'AD :
+	- Utilisateurs
+	- Ordinateurs
+
 - Avec ce schéma, vous pouvez visualiser le schéma voulu de l'infrastructure du projet pour le rendu du projet
 
 "schéma draw.io"
@@ -35,6 +72,11 @@ Notre équipe est composé de trois personne qui assumeront a tour de rôle au f
 | Membres de l'équipe | Sprint 1      | Sprint 2 | Sprint 3 | Sprint 4 | Sprint 5 | Sprint 6 |
 | ------------------- | ------------- | -------- | -------- | -------- | -------- | -------- |
 | Camille             | Technicien    |          |          |          |          |          |
+| Aymeric             | Scrum Master  |          |          |          |          |          |
+| Saiah               | Product Owner |          |          |          |          |          |
+
+------------------------------------------------------------------
+
 | Aymeric             | Scrum Master  |          |          |          |          |          |
 | Saiah               | Product Owner |          |          |          |          |          |
 
