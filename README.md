@@ -77,7 +77,5 @@ Notre équipe est composé de trois personne qui assumeront a tour de rôle au f
 
 ------------------------------------------------------------------
 
-| Aymeric             | Scrum Master  |          |          |          |          |          |
-| Saiah               | Product Owner |          |          |          |          |          |
 
 ------------------------------------------------------------------
