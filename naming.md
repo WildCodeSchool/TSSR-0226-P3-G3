@@ -112,7 +112,7 @@ Une lettre (V, P, F, S, M, T) associée à un numéro unique en liste commençan
 | Cas | Nom machine |
 |---|---|
 | Portable de Romain Mathieu | `LY-CLT-P00618` |
-| Serveur de fichier pour la direction/Responsables | `LY-SRV-SDFD-S00619` |
+| Serveur de fichier pour la direction/Responsables | `LY-SRV-SDFD-S99` |
 
 ## 5. Personnes
 
