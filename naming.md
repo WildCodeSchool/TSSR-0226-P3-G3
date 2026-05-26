@@ -60,8 +60,8 @@ OU=Publicité ; OU=Communication, OU=Lyon, DC=pharmagreen, DC=lan
 
 | Type | Format | Exemple |
 |---|---|---|
-| Utilisateur | Type de groupe (Local, globale, universel) - Département - fonction | `GL-COM-Photographe` |
-| Ordinateur | Type de groupe (local, globale, universel) - Département - service.type | `GL-DEV-Developpement.laptop` |
+| Utilisateur | Type de groupe (Local, global, universel) - Département - fonction | `GL-COM-Photographe` |
+| Ordinateur | Type de groupe (local, global, universel) - Département - service.type | `GL-DEV-Developpement.laptop` |
 | Fonctionnalité | | |
 
 ## 4. Ordinateurs
