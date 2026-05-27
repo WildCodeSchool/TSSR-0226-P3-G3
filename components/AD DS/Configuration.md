@@ -18,7 +18,7 @@
 
 Pharmgreen.lan
 
-|-- OU = Administrator
+|--OU = Administrator
 |-- OU = Users
 |-- OU = Computers
 |-- OU = Lyon
