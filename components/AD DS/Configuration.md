@@ -18,6 +18,7 @@
 
 DC = Pharmgreen.lan
 
+``` 
 |-- OU = Administrator
 |-- OU = Users
 |-- OU = Computers
@@ -140,3 +141,4 @@ DC = Pharmgreen.lan
 		|-- OU = Relation Publique et Presse
 			|-- OU = Users
 			|-- OU = Computers
+```
