@@ -1,7 +1,11 @@
 
  # Installation du rôle AD DS
 ------
- 
+ **Prérequis techniques :**
+Avoir un Windows Server 2025 à jour
+
+**Étapes à suivre :**
+
 Le serveur doit avoir une adresse IP statique.
 Le rôle DNS n'est pas installé.
 
