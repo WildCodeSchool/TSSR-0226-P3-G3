@@ -77,6 +77,7 @@ OU=Publicité ; OU=Communication, OU=Lyon, DC=pharmagreen, DC=lan
 | Code | Type |
 |---|---|
 | CLT | Client |
+| CLTA | Client d'administration |
 | SRV | Serveur |
 
 ### Fonction si serveur
