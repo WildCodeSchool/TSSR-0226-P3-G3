@@ -1,16 +1,13 @@
+ ## Installation DNS dans le Server Manager
 
- # Installation du rôle AD DS
-------
- **Prérequis techniques :**
+**Prérequis techniques :**
+
 Avoir un Windows Server 2025 à jour
-
-**Étapes à suivre :**
-
 Le serveur doit avoir une adresse IP statique.
 Le rôle DNS n'est pas installé.
+Il est recommandé d'installer les rôles AD DS et DNS en une seule fois.
 
-Pour la suite on estime que ce serveur a une adresse fixe dans la plage IP des machines clientes, par exemple 172.16.10.0/24.
-
+**Étapes à suivre :**
 - Aller dans le Server Manager
 - Cliquer sur Manage -> Add Roles and Features pour démarrer l'ajout du rôle Active Directory Domain Sevices
 - Cliquer sur Next
@@ -20,3 +17,13 @@ Pour la suite on estime que ce serveur a une adresse fixe dans la plage IP des m
 - Une fenêtre contextuelle va apparaître pour chaque rôle coché, il faut cliquer sur Add Features pour inclure les outils d'administration proposés
 - Cliquer sur Next 4 fois
 - Cliquer sur Install et ensuite sur Close pour laisser l'installation en arrière-plan
+
+
+Une fois l'installation terminée l'icone drapeau jaune apparaît, cliquer dessus et cliquer sur Promote this server to a domain controller :
+- Une fenêtre va apparaître
+- Sélectionner Add a new forest et dans Root domain name mettre le nom du domaine, par exemple Pharmgreen.lan
+- Cliquer sur Next
+- Laisser les options par défaut et mettre (2 fois) le mot de passe pour le DSRM
+- Cliquer sur Next 5 fois (laisser toutes les options par défaut)
+- Cliquer sur Install
+- Une fois que l'installation est terminé, le serveur redémarre
