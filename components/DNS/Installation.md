@@ -1,5 +1,7 @@
 ## Installation DNS dans le Server Manager
 
+**En cas de volonté d'installer un rôle AD DS il est recommandé d'installer le rôle DNS en même temps. Pour celà se référer au fichier [Installation.md]([./components/AD DS/Installation.md](https://github.com/WildCodeSchool/TSSR-0226-P3-G3/blob/main/components/AD%20DS/Installation.md)) du dossier AD DS**
+
 **Prérequis techniques :**
 Avoir un Windows Server 2025 à jour
 
