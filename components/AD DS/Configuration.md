@@ -19,10 +19,10 @@
 Pharmgreen.lan
 
 |--OU = Administrator
-|-- OU = Users
-|-- OU = Computers
-|-- OU = Lyon
-	|-- OU = Dev Logiciel
+|--OU = Users
+|--OU = Computers
+|--OU = Lyon
+	|--OU = Dev Logiciel
 		|-- OU = Gestion des marques
 			|-- OU = Users
 			|-- OU = Computers
