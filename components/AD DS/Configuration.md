@@ -16,7 +16,7 @@
 # Listing des OU et des sous-OU
 
 
-Pharmgreen.lan
+DC = Pharmgreen.lan
 
 |-- OU = Administrator
 |-- OU = Users
