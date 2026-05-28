@@ -16,7 +16,7 @@ La hiérarchie des OU se composera de **2 niveaux**.
 
 ```text
 pharmgreen.lan
-   Conteneur=Pharmgreen
+ └─Conteneur=Pharmgreen
           ├─ OU=Utilisateurs       ← ensemble des utilisateurs
                     └─ OU=<Département>          ex : Communication
                               └─ OU=<Service>    ex : Publicité
