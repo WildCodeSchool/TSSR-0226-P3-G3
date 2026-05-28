@@ -26,10 +26,9 @@ Pharmgreen.lan
 |-- OU = Computers
 |-- OU = Département
 	|-- OU = Dev Logiciel
-		|-- OU = Gestion des marques
-		|-- OU = Publicité
-		|-- OU = Relation Médias
-		|-- OU = Relation Publique et Presse
+		|-- OU = Developpement
+		|-- OU = Analyse et conception
+		|-- OU = Test et qualité
 
 	|-- OU = SI
 		|-- OU = Data
