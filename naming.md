@@ -16,11 +16,13 @@ La hiérarchie des OU se composera de **2 niveaux**.
 
 ```text
 pharmgreen.lan
-├─ OU=Utilisateurs       ← ensemble des utilisateurs
-├─ OU=Ordinateurs        ← ensemble des ordinateurs
-├─ OU=Administrateurs    ← ensemble des administrateurs
-└─ OU=Département          ex : Communication
-          └─ OU=<Service>    ex : Publicité
+   Conteneur=Pharmgreen
+          ├─ OU=Utilisateurs       ← ensemble des utilisateurs
+                    └─ OU=<Département>          ex : Communication
+                              └─ OU=<Service>    ex : Publicité
+          ├─ OU=Ordinateurs        ← ensemble des ordinateurs
+                    └─ OU=<Département>          ex : RH
+                              └─ OU=<Service>    ex : Formation
 ```
 
 ### Départements (sous-OU de Lyon)
