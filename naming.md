@@ -6,25 +6,21 @@
 
 ## 2. OU
 
-La hiérarchie des OU se composera de **3 niveaux**.
+La hiérarchie des OU se composera de **2 niveaux**.
 
 | Niveau | Contenu |
 |---|---|
 | DC | `pharmgreen.lan` |
-| OU principales | OU=Ville / OU=Users / OU=Computers |
-| Sous-OU de Lyon | Départements (11) |
+| OU principales | / OU=Utilisateurs / OU=Ordinateurs / OU=Administrateurs / OU=Département |
 | Sous-OU de Département | Services (50) |
-| Sous-OU de service | Ou=Users / Ou=Computers |
 
 ```text
 pharmgreen.lan
-├─ OU=Users            ← ensemble des utilisateurs
-├─ OU=Computers        ← ensemble des ordinateurs
-└─ OU=<Ville>              ex : Lyon
-     └─ OU=<Département>       ex : Communication
-          └─ OU=<Service>          ex : Publicité
-               ├─ OU=Users
-               └─ OU=Computers
+├─ OU=Utilisateurs       ← ensemble des utilisateurs
+├─ OU=Ordinateurs        ← ensemble des ordinateurs
+├─ OU=Administrateurs    ← ensemble des administrateurs
+└─ OU=Département          ex : Communication
+          └─ OU=<Service>    ex : Publicité
 ```
 
 ### Départements (sous-OU de Lyon)
@@ -35,12 +31,12 @@ pharmgreen.lan
 | DEV | Développement logiciel |
 | FIN | Direction Financière |
 | DIR | Direction Générale |
-| MARK | Direction marketing |
-| RD | R&D |
-| RH | RH |
+| MKT | Direction marketing |
+| RND | R&D |
+| RHU | RH |
 | JUR | Service Juridique |
-| SG | Services Généraux |
-| SI | Systèmes d'information |
+| SGX | Services Généraux |
+| SIN | Systèmes d'information |
 | VDC | Vente et développement commercial |
 
 
@@ -48,12 +44,12 @@ pharmgreen.lan
 ### Schéma OU
 
 ```text
-OU=service, OU=département, OU=ville, DC=pharmagreen, DC=lan
+OU=service, OU=département, DC=pharmagreen, DC=lan
 ```
 
 Exemple :
 ```text
-OU=Publicité ; OU=Communication, OU=Lyon, DC=pharmagreen, DC=lan
+OU=Publicité , OU=Communication, DC=pharmagreen, DC=lan
 ```
 
 ## 3. Groupes de sécurité
@@ -77,7 +73,6 @@ OU=Publicité ; OU=Communication, OU=Lyon, DC=pharmagreen, DC=lan
 | Code | Type |
 |---|---|
 | CLT | Client |
-| CLTA | Client d'administration |
 | SRV | Serveur |
 
 ### Fonction si serveur
@@ -138,9 +133,8 @@ Ajout d'un matricule `U` + 5 chiffres pour utilisateurs lambda et `A` + 5 chiffr
 
 | Valeur | Cible |
 |---|---|
-| USER | Utilisateur |
-| SERVEUR | Serveur |
-| CLIENT | Clients |
+| USER | Utilisateurs |
+| COMPUTER | Ordinateurs |
 
 ### Type
 
