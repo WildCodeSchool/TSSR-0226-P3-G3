@@ -1,4 +1,4 @@
-
+```bash
 services:
   vikunja:
     image: vikunja/vikunja
@@ -42,3 +42,4 @@ services:
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
       - ./caddy-data:/data
+```
