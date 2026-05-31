@@ -58,8 +58,8 @@ OU=Publicité , OU=Communication, DC=pharmagreen, DC=lan
 
 | Type | Format | Exemple |
 |---|---|---|
-| Utilisateur | Type de groupe (Local, global, universel) - Département - fonction | `GL-COM-Photographe` |
-| Ordinateur | Type de groupe (local, global, universel) - Département - service.type | `GL-DEV-Developpement.laptop` |
+| Utilisateur | Type de groupe User - Descriptif de l'Action | `GrpUserWallpaper` |
+| Ordinateur | Type de groupe Computer - Descriptif de l'Action | `GrpComputerFirefox` |
 | Fonctionnalité | | |
 
 ## 4. Ordinateurs
