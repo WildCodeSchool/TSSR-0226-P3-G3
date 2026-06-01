@@ -92,19 +92,6 @@ OU=Publicité , OU=Communication, DC=pharmagreen, DC=lan
 | 8   | FIREWALL           | 256    |
 
 
-| Code | Fonction |
-|---|---|
-| WEB | site web (intra ou extra) |
-| MAIL | Messagerie |
-| DC | Contrôleur de domaine (AD DS) |
-| DNS | DNS |
-| DHCP | DHCP |
-| SDF | Serveur de fichiers |
-| SDFD | Serveurs de fichiers Direction/Responsables |
-| SAAS | Serveurs logiciel (Software as a service) |
-| BAK | Backup |
-| FIR | Firewall |
-
 ### Matricule / Nom machine
 
 Une lettre (V, P, F, S, M, T) associée à un numéro unique en liste commençant à `00001`.
