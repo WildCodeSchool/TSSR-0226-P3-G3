@@ -66,12 +66,12 @@ OU=Publicité , OU=Communication, DC=pharmagreen, DC=lan
 
 ### Plages de numérotation
 
-| Plaege | Lettre | Type |
+| Plage | Lettre | Type |
 |-------|------|------|
-| 00001 -> 00049 | X | Serveurs |
-| 00050 -> 00099 | Z | Admins |
-| 00100 -> 00149 | W | Équipements réseau |
-| 00150 -> 99999 | Y | Clients |
+| 00001 &rarr; 00049 | X | Serveurs |
+| 00050 &rarr; 00099 | Z | Admins |
+| 00100 &rarr; 00149 | W | Équipements réseau |
+| 00150 &rarr; 99999 | Y | Clients |
 
 ### Localisation
 
