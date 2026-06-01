@@ -100,6 +100,7 @@ Les ordinateurs Standards sont tous à `00000`
 | X | Serveur |
 | Y | Client  |
 | Z | Admin   |
+| Q | Equipement réseau   |
 
 **Exemples :**
 
