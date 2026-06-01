@@ -91,6 +91,8 @@ OU=Publicité , OU=Communication, DC=pharmagreen, DC=lan
 | 7   | SERVEUR LOGICIEL   | 128    |
 | 8   | BACK UP            | 256    |
 | 9   | FIREWALL           | 512    |
+| 10  | BASTION            | 1024   |
+| 11  | JUMP SERVER        | 2048   |
 
 
 ### Matricule / Nom machine
