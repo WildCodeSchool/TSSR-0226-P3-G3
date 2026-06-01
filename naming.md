@@ -95,6 +95,7 @@ OU=Publicité , OU=Communication, DC=pharmagreen, DC=lan
 | 9   | FIREWALL           | 512    |
 | 10  | BASTION            | 1024   |
 | 11  | JUMP SERVER        | 2048   |
+| 12  | GESTIONNAIRE DE PARC INFORMATIQUE | 4096   |
 
 Exemple : PG-0005-X00001 correspond au serveur DC + DNS (l'AD DS)
            (0001+0004)
