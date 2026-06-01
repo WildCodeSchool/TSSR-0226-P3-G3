@@ -79,6 +79,19 @@ OU=Publicité , OU=Communication, DC=pharmagreen, DC=lan
 
 ### Fonction si serveur
 
+| Bit | ROLE               | VALEUR |
+| --- | ------------------ | ------ |
+| 0   | CONTROLEUR DOMAINE | 1      |
+| 1   | WEB                | 2      |
+| 2   | DNS                | 4      |
+| 3   | MAIL               | 8      |
+| 4   | DHCP               | 16     |
+| 5   | SERVEUR FICHIER    | 32     |
+| 6   | SERVEUR LOGICIEL   | 64     |
+| 7   | BACK UP            | 128    |
+| 8   | FIREWALL           | 256    |
+
+
 | Code | Fonction |
 |---|---|
 | WEB | site web (intra ou extra) |
