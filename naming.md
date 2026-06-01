@@ -69,8 +69,8 @@ OU=Publicité , OU=Communication, DC=pharmagreen, DC=lan
 | Plage | Lettre | Type |
 |-------|------|------|
 | 00001 &rarr; 00049 | X | Serveurs |
-| 00050 &rarr; 00099 | Z | Admins |
-| 00100 &rarr; 00149 | W | Équipements réseau |
+| 00050 &rarr; 00099 | W | Équipements réseau |
+| 00100 &rarr; 00149 | Z | Admins |
 | 00150 &rarr; 99999 | Y | Clients |
 
 ### Localisation
