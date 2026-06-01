@@ -82,14 +82,15 @@ OU=Publicité , OU=Communication, DC=pharmagreen, DC=lan
 | Bit | ROLE               | VALEUR |
 | --- | ------------------ | ------ |
 | 0   | CONTROLEUR DOMAINE | 1      |
-| 1   | WEB                | 2      |
+| 1   | DHCP               | 2      |
 | 2   | DNS                | 4      |
 | 3   | MAIL               | 8      |
-| 4   | DHCP               | 16     |
+| 4   | WEB                | 16     |
 | 5   | SERVEUR FICHIER    | 32     |
-| 6   | SERVEUR LOGICIEL   | 64     |
-| 7   | BACK UP            | 128    |
-| 8   | FIREWALL           | 256    |
+| 6   | SERVEUR DIRECTION  | 64     |
+| 7   | SERVEUR LOGICIEL   | 128    |
+| 8   | BACK UP            | 256    |
+| 9   | FIREWALL           | 512    |
 
 
 ### Matricule / Nom machine
