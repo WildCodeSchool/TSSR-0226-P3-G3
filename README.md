@@ -71,8 +71,8 @@ Notre équipe est composé de trois personne qui assumeront a tour de rôle au f
 
 | Membres de l'équipe | Sprint 1      | Sprint 2 	| Sprint 3 	| Sprint 4 	| Sprint 5 	| Sprint 6 	|
 | ------------------- | ------------- | --------	| --------	| -------- 	| -------- 	| -------- 	|
-| Camille             | Technicien    | Technicien 	|          	|          	|          	|          	|
-| Aymeric             | Scrum Master  | Technicien 	|          	|          	|          	|          	|
+| Camille             | Technicien    | Scrum Master 	|          	|          	|          	|          	|
+| Aymeric             | Scrum Master  | Product Owner 	|          	|          	|          	|          	|
 | Saiah               | Product Owner | Technicien 	|          	|          	|          	|          	|
 | Zishan			  |				  | Technicien	|			|			|			|			|
 ------------------------------------------------------------------
