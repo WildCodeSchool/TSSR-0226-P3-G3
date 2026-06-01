@@ -6,13 +6,13 @@
 
 ## 2. OU
 
-La hiérarchie des OU se composera de **2 niveaux**.
+La hiérarchie des OU se composera de **3 niveaux**.
 
 | Niveau | Contenu |
 |---|---|
 | DC | `pharmgreen.lan` |
-| OU principales | / OU=Utilisateurs / OU=Ordinateurs / OU=Administrateurs / OU=Département |
-| Sous-OU de Département | Services (50) |
+| OU principales | / OU=Utilisateurs / OU=Ordinateurs / OU=Administrateurs |
+| Sous-OU | / OU=Département | / OU=Services (50) |
 
 ```text
 pharmgreen.lan
@@ -66,16 +66,9 @@ OU=Publicité , OU=Communication, DC=pharmagreen, DC=lan
 
 ### Localisation
 
-| Code | Ville |
+| Code | Entreprise |
 |---|---|
-| LY | Lyon |
-
-### Type Client vs serveur
-
-| Code | Type |
-|---|---|
-| CLT | Client |
-| SRV | Serveur |
+| PG | Pharmgreen |
 
 ### Fonction si serveur
 
@@ -94,26 +87,27 @@ OU=Publicité , OU=Communication, DC=pharmagreen, DC=lan
 | 10  | BASTION            | 1024   |
 | 11  | JUMP SERVER        | 2048   |
 
+Exemple : PG-0005-X00001 correspond au serveur DC + DNS (l'AD DS)
+           (0001+0004)
 
 ### Matricule / Nom machine
 
-Une lettre (V, P, F, S, M, T) associée à un numéro unique en liste commençant à `00001`.
+Une lettre (X,Y,Z) associée à un numéro unique en liste commençant à `00001` pour les Serveurs.
+Les ordinateurs Standards sont tous à `00000`
 
 | Lettre | Type |
 |---|---|
-| V | VM |
-| P | Portable |
-| F | Ordinateur fixe |
-| S | Serveur |
-| M | Mobile |
-| T | Tablette |
+| X | Serveur |
+| Y | Client  |
+| Z | Admin   |
 
 **Exemples :**
 
 | Cas | Nom machine |
 |---|---|
-| Portable de Romain Mathieu | `LY-CLT-P00618` |
-| Serveur de fichier pour la direction/Responsables | `LY-SRV-SDFD-S99` |
+| Portable de Romain Mathieu | `PG-0000-Y00618` |
+| Serveur de fichier pour la direction/Responsables | `PG-0064-X00099` |
+| Ordinateur de Saiah | `PG-0000-Z00001` |
 
 ## 5. Personnes
 
@@ -124,6 +118,7 @@ En cas d'homonymie sur adresse mail, ajout d'un chiffre après le nom avec incr�
 #### Matricule
 
 Ajout d'un matricule `U` + 5 chiffres pour utilisateurs lambda et `A` + 5 chiffres pour les Administrateurs. Le A est identique au U pour une question de simplicité.
+Pour se connecter à la session : prenom.nom
 
 **Exemples :**
 
@@ -138,7 +133,7 @@ Ajout d'un matricule `U` + 5 chiffres pour utilisateurs lambda et `A` + 5 chiffr
 
 | Valeur | Cible |
 |---|---|
-| USER | Utilisateurs |
+| USER | Utilisateurs    |
 | COMPUTER | Ordinateurs |
 
 ### Type
@@ -152,7 +147,7 @@ Ajout d'un matricule `U` + 5 chiffres pour utilisateurs lambda et `A` + 5 chiffr
 
 | Valeur | Portée |
 |---|---|
-| LOCAL | Local |
+| LOCAL | Local   |
 | GLOBAL | Global |
 
 ### Département
@@ -161,11 +156,11 @@ Voir naming point 2
 
 ### Fonction
 
-La fonction du GPOestexplicitement détailléen quelques mots attachés
+La fonction du GPOestexplicitement détaillé en quelques mots attachés
 
 ### Date de révision
 
-`YYYYMMDD` au format ISO 8601 pour faliciter le tri chronologique.
+`YYYYMMDD` au format ISO 8601 pour faciliter le tri chronologique.
 
 ### Exemple
 
