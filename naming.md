@@ -84,7 +84,7 @@ OU=Publicité , OU=Communication, DC=pharmagreen, DC=lan
 | 0   | CONTROLEUR DOMAINE | 1      |
 | 1   | DHCP               | 2      |
 | 2   | DNS                | 4      |
-| 3   | MAIL               | 8      |
+| 3   | MESSAGERIE         | 8      |
 | 4   | WEB                | 16     |
 | 5   | SERVEUR FICHIER    | 32     |
 | 6   | SERVEUR DIRECTION  | 64     |
