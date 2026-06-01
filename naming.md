@@ -64,6 +64,15 @@ OU=Publicité , OU=Communication, DC=pharmagreen, DC=lan
 
 ## 4. Ordinateurs
 
+### Plages de numérotation
+
+| Plaege | Lettre | Type |
+|-------|------|------|
+| 00001 -> 00049 | X | Serveurs |
+| 00050 -> 00099 | Z | Admins |
+| 00100 -> 00149 | W | Équipements réseau |
+| 00150 -> 99999 | Y | Clients |
+
 ### Localisation
 
 | Code | Entreprise |
