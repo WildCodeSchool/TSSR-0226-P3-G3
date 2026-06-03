@@ -2,7 +2,7 @@
 
 ### Administration des serveurs Windows
 
-- RSAT => Gestion de consoles serveurs distant (AD, DNS, DHCP, etc.):
+1. RSAT => Gestion de consoles serveurs distant (AD, DNS, DHCP, etc.):
 	 outils AD DS et service LDS, gestionnaire de serveur, outils du serveur DNS, outils du serveur DHCP, outils de service de fichiers, outils des services Bureau a Distance, outils des services de certificats Active Directory.
 
 ##### Pour installer les fonctionnalités RSAT, suivre le chemin suivant : 
@@ -16,12 +16,13 @@ Rechercher RSAT**
 
 
 ![[Installer-RSAT-GUI -4.png]](components/PC Administration Windows/Ressources/Installer-RSAT-GUI -4.png)
+---
 
 2. Windows RDP => Prise de main à distance.
 
 ### Activation de RDP sur Windows 11
 
-# -  En graphique
+### -  En graphique
 
 
 Pour activer le service RDP (Remote Desktop Product) suivre le chemin a parcourir suivant :
@@ -30,7 +31,7 @@ Cliquer su démarrer -> Paramètres -> Système -> Bureau à distance -> Activer
 
 ![[Activer-RDP-Graphique-1.png]](components/PC Administration Windows/Ressources/Activer-RDP-Graphique-1.png)
 
-# - En ligne de commande via PowerShell
+### - En ligne de commande via PowerShell
 
 Ouvrir Powers avec les privilèges administrateur et taper la commande suivante :
 
