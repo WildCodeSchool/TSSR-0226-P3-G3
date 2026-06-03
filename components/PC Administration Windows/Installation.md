@@ -2,20 +2,20 @@
 
 ### Administration des serveurs Windows
 
-1. RSAT => Gestion de consoles serveurs distant (AD, DNS, DHCP, etc.)
-	- outils AD DS et service LDS, gestionnaire de serveur, outils du serveur DNS, outils du serveur DHCP, outils de service de fichiers, outils des services Bureau a Distance, outils des services de certificats Active Directory.
+- RSAT => Gestion de consoles serveurs distant (AD, DNS, DHCP, etc.):
+	 outils AD DS et service LDS, gestionnaire de serveur, outils du serveur DNS, outils du serveur DHCP, outils de service de fichiers, outils des services Bureau a Distance, outils des services de certificats Active Directory.
 
- ##### Pour installer les fonctionnalités RSAT, suivre le chemin suivant : 
+##### Pour installer les fonctionnalités RSAT, suivre le chemin suivant : 
 
 **Paramètres -> Applications -> Fonctionnalités facultatives -> Afficher les fonctionnalités ->
 Rechercher RSAT**
 
 
-![[Installer RSAT GUI-3.png]](
+
+![[Installer-RSAT-GUI-3.png]](components/PC Administration Windows/Ressources/Installer-RSAT-GUI-3.png)
 
 
-![[Installer RSAT GUI -4.png]](
-
+![[Installer-RSAT-GUI -4.png]](components/PC Administration Windows/Ressources/Installer-RSAT-GUI -4.png)
 
 2. Windows RDP => Prise de main à distance.
 
