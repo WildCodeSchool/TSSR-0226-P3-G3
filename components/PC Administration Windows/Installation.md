@@ -217,7 +217,7 @@ Cette commande active les fonctionnalités nécessaires pour exécuter WSL et in
 3. Une fois l'installation terminée, aller dans "démarrer", lancer Ubuntu.
 4. Configurer le nom d'utilisateur et le mot de passe et valider.
 
-![[Windows-Ubuntu-lancement.png]]
+![[Windows-Ubuntu-lancement.png]](components/PC Administration Windows/Ressources/Windows-Ubuntu-lancement.png)
 
 ## Mettre à jour et mettre à niveau des packages
 
