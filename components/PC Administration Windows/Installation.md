@@ -19,12 +19,12 @@ Rechercher RSAT**
 ![[Installer-RSAT-GUI -4.png]]
 
 
+---
 ## 2.  Windows RDP => Prise de main à distance.
 
 ### Activation de RDP sur Windows 11
 
 # -  En graphique
-
 
 Pour activer le service RDP (Remote Desktop Product) suivre le chemin a parcourir suivant :
 
@@ -32,6 +32,7 @@ Cliquer su démarrer -> Paramètres -> Système -> Bureau à distance -> Activer
 
 ![[Activer-RDP-Graphique-1.png]]
 
+---
 # - En ligne de commande via PowerShell
 
 Ouvrir Powers avec les privilèges administrateur et taper la commande suivante :
@@ -44,10 +45,9 @@ Enable-PSRemoting -Force
 ![[Activer-RDP-Powershell-2.png]]
 
 
+---
+## 3. Remote PowerShell => CLI à distance => Activation de WinRM
 
-## 3. Remote PowerShell => CLI à distance
-
-#### - Activation de WinRM
 
 Pour vérifier si le service WinRM existe ou non sur votre machine, saisissez la commande PowerShell suivante :
 
