@@ -9,40 +9,49 @@ $FilePath = [System.IO.Path]::GetDirectoryName($MyInvocation.MyCommand.Definitio
 
 ### Parametre(s) à modifier
 
-$File = "$FilePath\USER_Creation_auto_Liste.txt"
+$File = "C:\Users\Administrator\Documents\test.csv" # Pointe vers le CSV
 
 ### Main program
 
 Clear-Host
+#$User[0] | Format-List *  --> Pour voir si l'affichage du csv est correct
 If (-not(Get-Module -Name activedirectory))
 {
     Import-Module activedirectory
 }
 
-$Users = Import-Csv -Path $File -Delimiter ";" -Header "Prenom","Nom","Matricule", "Département", "Service"
+$Users = Import-Csv -Path $File -Delimiter "," -Header "Prenom", "Nom", "Matricule", "Company", "Departement", "City", "Office", "Fonction", "Manager", "Telephone"
 $ADUsers = Get-ADUser -Filter * -Properties *
 $count = 1
 Foreach ($User in $Users)
 {
     Write-Progress -Activity "Création des utilisateurs dans l'OU" -Status "%effectué" -PercentComplete ($Count/$Users.Length*100)
-    $Name              = "$($User.Nom) $($User.Prenom)"
-    $DisplayName       = "$($User.Nom) $($User.Prenom)"
-    $SamAccountName    = $($User.Prenom.substring(0,1).tolower()) + $($User.Nom.ToLower())
-    $UserPrincipalName = (($User.prenom.substring(0,1).tolower() + $User.nom.ToLower()) + "@" + (Get-ADDomain).Forest)
+    $Name              = "$($User.Prenom) $($User.Nom)"
+    $DisplayName       = "$($User.Prenom) $($User.Nom) $($User.Matricule)"  # Affichage "Prenom Nom Matricule"
+    $SamAccountName    = "$($User.Prenom.ToLower()) + "." + $($User.Nom.ToLower())" # Affichage pour session "prenom.nom" 
+    $UserPrincipalName = (($User.Prenom.ToLower() + "." + $User.nom.ToLower()) + "@" + (Get-ADDomain).Forest)
     $GivenName         = $User.Prenom
     $Surname           = $User.Nom
-    $OfficePhone       = $User.Tel
+    $Matricule         = $User.Matricule
+    $City              = $User.City
+    $OfficePhone       = $User.Telephone
     $EmailAddress      = $UserPrincipalName
-    $Path              = "ou=$($User.Service),ou=LabUtilisateurs,dc=lab,dc=lan"
-    $Company           = "Ma Societe"
-    $Department        = "$($User.Service)"
+    $Path              = "ou=$($User.Office),ou=$($User.Departement),ou=Utilisateurs,ou=Pharmgreen,dc=pharmgreen,dc=lan"
+    $Company           = $User.Company
+    $Department        = $User.Departement
+    $Office            = $User.Office
+    $Fonction          = $User.Fonction
+    #$ManagerName       = $User.Manager  --> test resolution pb de Manager
+    #$ManagerDN         = (Get-ADUser -Filter {DisplayName -like $ManagerName} | Select -First 1).DistinguishedName  --> test resolution pb de Manager
     
     If (($ADUsers | Where {$_.SamAccountName -eq $SamAccountName}) -eq $Null)
     {
         New-ADUser -Name $Name -DisplayName $DisplayName -SamAccountName $SamAccountName -UserPrincipalName $UserPrincipalName `
-        -GivenName $GivenName -Surname $Surname -OfficePhone $OfficePhone -EmailAddress $EmailAddress `
+        -GivenName $GivenName -Surname $Surname -OfficePhone $OfficePhone -EmailAddress $EmailAddress -City $City `
         -Path $Path -AccountPassword (ConvertTo-SecureString -AsPlainText Azerty1* -Force) -Enabled $True `
+        -Office $Office -Title $Fonction `
         -OtherAttributes @{Company = $Company;Department = $Department} -ChangePasswordAtLogon $True
+
         
         Write-Host "Création du USER $SamAccountName" -ForegroundColor Green
     }
