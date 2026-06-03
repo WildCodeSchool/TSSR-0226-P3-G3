@@ -1,6 +1,6 @@
 # Liste logiciels a installer sur le PC d'administration Windows 11
 
-## Administration des serveurs Windows
+## i. Administration des serveurs Windows
 
 ## 1. RSAT => Gestion de consoles serveurs distant (AD, DNS, DHCP, etc.)
 
@@ -24,7 +24,7 @@ Rechercher RSAT**
 
 ### Activation de RDP sur Windows 11
 
-# -  En graphique
+#### -  En graphique
 
 Pour activer le service RDP (Remote Desktop Product) suivre le chemin a parcourir suivant :
 
@@ -33,7 +33,7 @@ Cliquer su démarrer -> Paramètres -> Système -> Bureau à distance -> Activer
 ![[Activer-RDP-Graphique-1.png]]
 
 ---
-# - En ligne de commande via PowerShell
+#### - En ligne de commande via PowerShell
 
 Ouvrir Powers avec les privilèges administrateur et taper la commande suivante :
 
