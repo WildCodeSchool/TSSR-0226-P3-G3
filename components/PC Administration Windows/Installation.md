@@ -38,5 +38,6 @@ Ouvrir Powers avec les privilèges administrateur et taper la commande suivante 
 Enable-PSRemoting -Force
 `````
 
+
 ![[Activer-RDP-Powershell-2.png]](components/PC Administration Windows/Ressources/Activer-RDP-Powershell-2.png)
 
