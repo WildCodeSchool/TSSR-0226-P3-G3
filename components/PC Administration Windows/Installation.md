@@ -16,6 +16,7 @@ Rechercher RSAT**
 
 
 ![[Installer-RSAT-GUI -4.png]](components/PC Administration Windows/Ressources/Installer-RSAT-GUI -4.png)
+
 ---
 
 2. Windows RDP => Prise de main à distance.
