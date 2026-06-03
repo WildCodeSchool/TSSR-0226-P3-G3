@@ -28,7 +28,7 @@ Pour activer le service RDP (Remote Desktop Product) suivre le chemin a parcouri
 
 Cliquer su démarrer -> Paramètres -> Système -> Bureau à distance -> Activer.
 
-![[Activer bureau a distance RDP.png]](
+![[Activer bureau a distance RDP.png]](components/PC Administration Windows/Ressources/Activer-RDP-Graphique-1.png)
 
 # - En ligne de commande via PowerShell
 
@@ -38,5 +38,5 @@ Ouvrir Powers avec les privilèges administrateur et taper la commande suivante 
 Enable-PSRemoting -Force
 `````
 
-![[Activer Remote Powershell-1.png]](
+![[Activer Remote Powershell-1.png]](components/PC Administration Windows/Ressources/Activer-RDP-Powershell-2.png)
 
