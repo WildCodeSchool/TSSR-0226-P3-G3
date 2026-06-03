@@ -79,7 +79,7 @@ Enable-PSRemoting
 Ouvrir le navigateur internet et se rendre sur le site de Git afin de télécharger la version git Bash pour Windows 
 "https://git-scm.com/install/windows"
 
-![[Install-GitBash-Windows11-1.png]]
+![[Install-GitBash-Windows11-1.png]](components/PC Administration Windows/Ressources/Install-GitBash-Windows11-1.png)
 
 Lancer le téléchargement et ensuite lancer l'installeur.
 
