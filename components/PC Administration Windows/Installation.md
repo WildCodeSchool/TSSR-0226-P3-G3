@@ -79,7 +79,7 @@ Enable-PSRemoting
 Ouvrir le navigateur internet et se rendre sur le site de Git afin de télécharger la version git Bash pour Windows 
 "https://git-scm.com/install/windows"
 
-![[Install-GitBash-Windows11-1.png]](components/PC Administration Windows/Ressources/Install-GitBash-Windows11-1.png)
+![[Install-GitBash-Windows11-1.png]]
 
 Lancer le téléchargement et ensuite lancer l'installeur.
 
@@ -143,5 +143,111 @@ Puis dans ton terminal, tu vas renseigner ton nom d'utilisateur et ton email (le
 3. Ajoute aussi cette configuration (c'est un peu tôt pour t'expliquer en détail mais si tu ne le fais pas git va te poser la question quand tu essaieras de récupérer du code distant) `git config --global pull.rebase false`
 4. Enfin, termine par cette dernière configuration, qui configure git pour utiliser le nom "main" et non plus "master" comme branche par défaut, ce qui te facilitera la vie quand tu vas utiliser Github (qui lui utilise le nom "main") `git config --global init.defaultBranch main`
 
+---
 
+
+## 2. Putty => Connexion SSH
+
+## Installation PuTTY
+<span id="Installation-PuTTY"></span>
+
+**Prérequis techniques :**
+- Système d'exploitation Windows 64 bits
+- *Une version pour système 32 bits est à disposition sur le site internet*
+
+Vous pouvez télécharger la dernière version de PuTTY directement depuis le [Miscrosoft Store](https://apps.microsoft.com/detail/xpfnzksklbp7rj?hl=fr-FR&gl=FR) ou télécharger l'installeur depuis [le site officiel de Putty](https://putty.org/index.html)
+
+
+Si vous utilisez Microsoft Store vous pouvez suivre l'installation à partir de l'étape 3, sinon voici la procédure :
+
+**1** -  Sur la page d'accueil cliquer sur "Download PuTTY"
+
+**2** -  Dans la rubrique "Package Files" cliquer sur le premier lien "putty-64bit-0.83-installer.msi" afin de télécharger l'installeur 
+
+**3** -  Lancer l'installation en double-cliquant sur le fichier téléchargé, cliquer sur "Next" sur la première page
+
+**4** -  Sélectionner le chemin d'installation du logiciel (Ne modifier qu'en cas d'installation particulière)
+
+**5** -  Pour ajouter un raccourci sur le bureau, dans la page "Product Features" cliquer sur le second titre "Add shortcut to PuTTY on the desktop" et sélectionner "Will be installed on local hard drive"
+
+**6** -  Cliquer sur "Yes" afin d'accepter l'installation du logiciel
+
+**7** -  Cliquer sur "Finish" afin de terminer l'installation, penser à décocher "view Readme File" pour ne pas déclencher l'ouverture du manuel d'utilisation - si non souhaité
+
+
+---
+
+### 3. FileZilla => Transfert de fichiers
+
+1. [Téléchargez le fichier](https://filezilla-project.org/download.php?show_all=1) Filezilla FTP Client Installer pour votre système d'exploitation Windows.
+  
+2. Double-cliquez pour exécuter le fichier d'installation FTP de FileZilla. Il affichera un avertissement de sécurité. Veuillez le lire et l'accepter ou cliquez sur l'option Exécuter.
+
+3. Le client FileZilla affichera un contrat de licence. Veuillez le lire et accepter l'accord pour installer le client FileZilla sur votre PC.
+ 4. Cliquez sur le bouton Suivant jusqu'à ce qu'il affiche le bouton Installer. Cliquez ensuite dessus.
+5. L'installation peut prendre quelques secondes mais dépendra de votre PC. Une fois terminé, cliquez sur le bouton Terminer.
+
+Félicitations. Vous avez installé avec succès le client FileZilla sur votre système d'exploitation Windows. Vous pouvez maintenant commencer à l'utiliser.
+
+
+
+
+### 4. WSL (Windows Subsystem for Linux) => Intégration de Linux dans Windows
+
+## Conditions préalables
+
+Vous devez exécuter Windows 10 version 2004 et ultérieure ou Windows 11 pour utiliser les commandes ci-dessous.
+
+## Installer la commande WSL
+
+Vous pouvez maintenant installer tout ce dont vous avez besoin pour exécuter WSL avec une seule commande. Ouvrez PowerShell en mode **Administrateur** en cliquant avec le bouton droit et en sélectionnant « Exécuter en tant qu’administrateur », entrez la commande wsl --install, puis redémarrez votre ordinateur.
+
+PowerShell
+
+```
+wsl --install
+```
+
+Cette commande active les fonctionnalités nécessaires pour exécuter WSL et installer la distribution Ubuntu de Linux.
+
+## installer votre distribution Linux de votre choix
+
+1. Ouvrez le [microsoft Store](ms-windows-store://collection?CollectionId=LinuxDistros) et sélectionnez votre distribution Linux préférée.
+2. Ici Je selectionne Ubuntu dans la barre de recherche et lance l'installaion.
+3. Une fois l'installation terminée, aller dans "démarrer", lancer Ubuntu.
+4. Configurer le nom d'utilisateur et le mot de passe et valider.
+
+![[Windows-Ubuntu-lancement.png]]
+
+## Mettre à jour et mettre à niveau des packages
+
+Nous vous recommandons de mettre régulièrement à jour et à niveau vos packages à l’aide du gestionnaire de package préféré pour la distribution. Pour Ubuntu, utilisez la commande :
+
+Bash
+
+```
+sudo apt update && sudo apt upgrade
+```
+
+Windows ne met pas automatiquement à jour ou à niveau vos distributions Linux. Il s’agit d’une tâche que la plupart des utilisateurs Linux préfèrent contrôler eux-mêmes.
+
+
+## Modifier la distribution Linux par défaut installée
+
+Par défaut, la distribution Linux installée sera Ubuntu. Cela peut être modifié à l’aide de l’indicateur `-d` .
+
+- Pour modifier la distribution installée, entrez :
+
+```
+wsl.exe --install -d [Distro]
+```
+
+ 
+Remplacez `[Distro]` par le nom de la distribution que vous souhaitez installer.
+ 
+- Pour afficher la liste des distributions Linux disponibles disponibles à télécharger via le magasin en ligne, entrez :
+
+```
+wsl.exe --list --online
+```
 
