@@ -2,6 +2,8 @@
 
 ## Sommaire 
 
+- [1. Référence rapide des équipement](#1-référence-rapide-des-équipements-fixes)
+ 
 ---
 
 
@@ -14,7 +16,7 @@
 - Anticiper la croissance future de l'entreprise.
 
 
-## Référence rapide des équipements fixe 
+## 1.Référence rapide des équipements fixe 
 
 | Équipement      | Nom VM         | Adresse IP  | Masque          | GAWTEAY  | Statut |
 | --------------- | -------------- | ----------- | --------------- | ----------- | ------ |
