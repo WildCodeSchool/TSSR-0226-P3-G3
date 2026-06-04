@@ -17,7 +17,7 @@
 
 
 
-## 1.Référence rapide des équipements fixes 
+## 1.#Référence rapide des équipements fixes 
 
 | Équipement      | Nom VM         | Adresse IP  | Masque          | GAWTEAY  | Statut |
 | --------------- | -------------- | ----------- | --------------- | ----------- | ------ |
