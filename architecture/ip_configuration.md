@@ -57,12 +57,84 @@ Routes statiques pfSense
 | 172.16.1.0  | /26    | 172.16.7.253 | VLAN01 Dev via R1 | OPERATIONNEL      |
 | 172.16.3.0  | /26    | 172.16.7.253 | VLAN04 RH via R1  | OPERATIONNEL      |
 
+R1 — PG-0000-W00051 (routeur central)
+
+| Interface | Adresse IP   | Masque | Rôle                    |
+| --------- | ------------ | ------ | ----------------------- |
+| eth0      | 172.16.7.253 | /21    | > pfSense LAN           |
+| eth1      | 172.16.6.30  | /27    | Gateway VLAN12 + VLAN13 |
+| eth2      | 172.16.7.249 | /30    | Lien R1|R2              |
+| eth3      | 172.16.7.245 | /30    | Lien R1|R3              |
+
+Routes statiques R1
+
+| Destination   | Via          | Description       |
+| ------------- | ------------ | ----------------- |
+| 0.0.0.0/0     | 172.16.7.254 | Default | pfSense |
+| 172.16.1.0/26 | 172.16.7.250 | VLAN01 via R2     |
+| 172.16.3.0/26 | 172.16.7.246 | VLAN04 via R3     |
+
+R2 — PG-0000-W00052 (passerelle VLAN01).
 
 
+| Interface | Adresse IP   | Masque | Rôle                     |
+| --------- | ------------ | ------ | ------------------------ |
+| eth0      | 172.16.7.250 | /30    |  R1                     |
+| eth1      | 172.16.1.62  | /26    | Gateway VLAN01 — vmbr301 |
+| eth2      | 172.16.7.241 | /30    | Lien R2|R3               |
+
+Routes statiques R2
+
+| Destination   | Via          | Description   |
+| ------------- | ------------ | ------------- |
+| 0.0.0.0/0     | 172.16.7.249 |   |
+| 172.16.3.0/26 | 172.16.7.242 | VLAN04 via R3 |
+
+DHCP Relay : eth1 > upstream eth0 > server 172.16.6.2  > OPERATIONNELLE
+
+R3 — PG-0000-W00053 (passerelle VLAN04)
+
+| Interface | Adresse IP   | Masque | Rôle                     |
+| --------- | ------------ | ------ | ------------------------ |
+| eth0      | 172.16.7.246 | /30    |  R1                     |
+| eth1      | 172.16.3.62  | /26    | Gateway VLAN04 | vmbr304 |
+| eth2      | 172.16.7.242 | /30    | Lien R3| R2               |
+
+Routes statiques R3
+
+| Destination   | Via          | Description   |
+| ------------- | ------------ | ------------- |
+| 0.0.0.0/0     | 172.16.7.245 | 
+| 172.16.1.0/26 | 172.16.7.241 | VLAN01 via R2 |
 
 
+DHCP Relay : eth1 > upstream eth0 > server 172.16.6.2  > OPERATIONNELLE
 
+Liaisons inter-routeurs
 
+| Lien    | IP >   | IP <   | Masque |
+| ------- | ------------ | ------------ | ------ |
+| R1 | R2 | 172.16.7.249 | 172.16.7.250 | /30    |
+| R1 | R3 | 172.16.7.245 | 172.16.7.246 | /30    |
+| R2 | R3 | 172.16.7.241 | 172.16.7.242 | /30    |
+
+ Configuration DHCP
+
+Serveur DHCP : 172.16.6.2 (PG-0002-X00002 | Windows Server 2025)
+ 
+| VLAN   | Département        | Plage DHCP                       | Gateway      | DNS        | Relay     | Statut                        |
+| ------ | ------------------ | ---------------------------      | ------------ | ---------- | --------- | --------------------------    |
+| VLAN01 | Developemment Logiciel | 172.16.1.1 > 172.16.1.61     | 172.16.1.62  | 172.16.6.1 | R2 eth1 OK | OPERATIONNEL            |
+| VLAN02 | SI                     | 172.16.1.65 > 172.16.1.125   | 172.16.1.126 | 172.16.6.1 | /          |  Scope créé, en attente |
+| VLAN03 | R&D                    | 172.16.2.1 > 172.16.2.125    | 172.16.2.126 | 172.16.6.1 | /          |  Scope créé, en attente |
+| VLAN04 | RH                     | 172.16.3.1 > 172.16.3.61     | 172.16.3.62  | 172.16.6.1 | R3 eth1 OK | OPERATIONNEL            |
+| VLAN05 | Direction Financière   | 172.16.3.65 > 172.16.3.125   | 172.16.3.126 | 172.16.6.1 | /          |  Scope créé, en attente |
+| VLAN06 | Services Généraux      | 172.16.3.129 > 172.16.3.157  | 172.16.3.158 | 172.16.6.1 | /          |  Scope créé, en attente |
+| VLAN07 | Service Juridique      | 172.16.3.161 > 172.16.3.189  | 172.16.3.190 | 172.16.6.1 | /          |  Scope créé, en attente |
+| VLAN08 | Direction Générale     | 172.16.3.193 > 172.16.3.221  | 172.16.3.222 | 172.16.6.1 | /          |  Scope créé, en attente |
+| VLAN09 | Ventes & Developmment  | 172.16.4.1 > 172.16.4.125    | 172.16.4.126 | 172.16.6.1 | /          |  Scope créé, en attente |
+| VLAN10 | DirECTION Marketing    | 172.16.5.1 > 172.16.5.61     | 172.16.5.62  | 172.16.6.1 | /          |  Scope créé, en attente |
+| VLAN11 | Communication          | 172.16.5.65 > 172.16.5.125   | 172.16.5.126 | 172.16.6.1 | /          |  Scope créé, en attente |
 
 
 
