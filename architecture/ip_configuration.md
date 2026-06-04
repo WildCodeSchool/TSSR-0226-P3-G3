@@ -2,7 +2,7 @@
 
 ## Sommaire 
 
-- [1. Référence rapide des équipement fixes](#1-Référence-rapide-des-équipements-fixes)
+- [1. Référence rapide des équipement fixes](1-Référence-rapide-des-équipements-fixes)
  
 ---
 
