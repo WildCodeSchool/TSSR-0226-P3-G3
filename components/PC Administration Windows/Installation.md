@@ -1,5 +1,12 @@
 # Liste logiciels a installer sur le PC d'administration Windows 11
 
+
+
+
+
+
+
+
 ## i. Administration des serveurs Windows
 
 ## 1. RSAT => Gestion de consoles serveurs distant (AD, DNS, DHCP, etc.)
@@ -69,6 +76,28 @@ Enable-PSRemoting
 ![[Install-WinRM-config-2.png]]
 
 ---
+
+## 4. Serveur RDP => Portail RDP
+
+- #### Activer le Bureau à distance sous Windows 11
+
+Sur Windows 11, l'accès RDP s'active dans les "**Paramètres**" du système en suivant le chemin suivant : **Paramètres > Système > Bureau à distance**.
+
+![[Activer-RDP-Graphique-1 1.png]]
+
+
+---
+
+## 5. Suite logiciels Sysinternals => Suite d'outils
+
+Les Utilitaires de résolution des problèmes de Sysinternals ont été regroupés dans une seule suite d’outils. Ce fichier contient les outils de résolution des problèmes individuels et des fichiers d’aide.
+
+Il est possible de télécharger Sysinternals Suite a partir du Microsoft Store
+
+![[Install-SysinternalsSuite-WindowsStore-1.png]]
+
+---
+
 
 
 # ii. Administration des serveurs Linux
@@ -251,3 +280,54 @@ Remplacez `[Distro]` par le nom de la distribution que vous souhaitez installe
 wsl.exe --list --online
 ```
 
+---
+
+### 5. VNC (et dérivés...) => Prise en main à distance GUI
+
+Utilisation ici du logiciel "TightVNC"
+
+TightVNC est disponible au téléchargement depuis l’adresse suivante : 
+
+[https://www.tightvnc.com/download.php](https://www.tightvnc.com/download.php).
+
+
+Lancer l'installeur téléchargé.
+#### Etape 1
+
+Le programme d’installation propose **3 options** classiques :
+
+- L’installation **typique**, tout se passe de manière automatique avec les composants et leurs valeurs par défaut (partie serveur, partie cliente, mot de passe, emplacement sur le disque, etc.) ;
+    
+- L’installation **personnalisée,** ici le programme demande confirmation et de chaque étape ;
+    
+- L’installation **complète,** identique à la première option, mais en incluant tous les composants disponibles.
+
+Dans notre cas, je choisi de passer par **l’installation personnalisée**.
+
+il s’agit du poste avec lequel nous allons  **prendre le contrôle** à distance d’un autre, il faut installer TightVNC **Client/Viewer.**
+
+#### Etape 2
+
+Le programme d’installer propose ensuite la configuration de **4 options distinctes** :
+
+- **L’association des fichiers avec une extension .vnc** est pratique, vous pouvez garder cette option ;
+    
+- **Déclarer TightVNC en tant que service** va dépendre de vos contraintes de sécurité. Dans le cas où vous souhaitez démarrer les programmes TightVNC de manière automatique avec le poste, il faut cocher cette option. Je reviendrai plus en détail sur cet aspect dans le chapitre suivant ;
+    
+- L’option suivante autorise les programmes TightVNC à exécuter la séquence « **Ctrl-Alt-Del** » bien connue permettant notamment d’envoyer un ordre de redémarrage au système d’exploitation. En la cochant, vous autorisez l’utilisateur ayant le contrôle du poste à effectuer cette opération ;
+    
+- Enfin, dernière option, il s’agit d’ajouter une règle dans le **Firewall** Windows afin de **laisser passer les flux réseaux** concernant TightVNC. Je valide cette option.
+
+#### Etape 3
+
+Le panneau suivant est important car il permet de **sécuriser** l’installation de TightVNC sur le poste. Il s’agit ici de définir **deux mots de passe différents** :
+
+- **Le premier** mot de passe va permettre de **sécuriser la prise de contrôle** à distance sur ce poste. **Chaque client** VNC souhaitant s’y connecter devra connaître ce mot de passe ;
+    
+- **Le second** permet de **sécuriser le comportement et la configuration** de TighVNC sur ce poste. **Chaque modification** dans la configuration ou l’exécution du serveur TightVNC devra être confirmée avec ce mot de passe.
+
+#### Etape 4
+
+ L’installation se termine ici.
+
+---
