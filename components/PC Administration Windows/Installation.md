@@ -2,6 +2,21 @@
 
 
 
+| Administration des serveurs windows   | Logiciels                                                  |
+| ------------------------------------- | ---------------------------------------------------------- |
+| RSAT                                  | Gestion de consoles serveurs distant (AD, DNS, DHCP, etc.) |
+| Windows RDP                           | Prise de main à distance                                   |
+| Remote Powershell                     | CLI à distance - Activation de WinRM                       |
+| Serveur RDP                           | Portail RDP - Activation du Bureau à distance              |
+| Suite Sysinternals                    | Suite d'outils - Utilitaires de résolution des problèmes   |
+| **Administration des serveurs Linux** |                                                            |
+| Git Bash                              | Shell bash et SSH/SCP                                      |
+| Putty                                 | Connexion SSH                                              |
+| Filezilla                             | Transfert de fichiers                                      |
+| WSL                                   | Intégration de Linux dans Windows                          |
+| VNC                                   | Prise en main à distance GUI                               |
+
+
 
 
 
