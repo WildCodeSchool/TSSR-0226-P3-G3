@@ -16,6 +16,7 @@
 - Anticiper la croissance future de l'entreprise.
 
 
+
 ## 1.Référence rapide des équipements fixes 
 
 | Équipement      | Nom VM         | Adresse IP  | Masque          | GAWTEAY  | Statut |
@@ -25,8 +26,7 @@
 | Intranet Web    | PG-0016-X00003 | 172.16.6.3  | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL      |
 | Serveur fichier | PG-0032-X00018 | 172.16.6.13 | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL      |
 
-
-## Routeur VyOS
+## Routeur VyOS
 
 | Équipement | Nom VM         | Interface | Adresse IP   | Masque | Rôle           |
 | ---------- | -------------- | --------- | ------------ | ------ | -------------- |
@@ -40,4 +40,38 @@
 | R3         | PG-0000-W00053 | eth0      | 172.16.7.246 | /30    | Lien R3 \| R1  |
 | R3         | PG-0000-W00053 | eth1      | 172.16.3.62  | /26    | Gateway VLAN04 |
 | R3         | PG-0000-W00053 | eth2      | 172.16.7.242 | /30    | Lien R3 \| R2  |
+
+
+## Résumé des plages d'adressage par VLAN 
+
+| Plage             | Usage                            |
+| ---------------- | -------------------------------- |
+| 172.16.1.0/26    | VLAN01 | Dev Logiciel            |
+| 172.16.1.64/26   | VLAN02 | SI                      |
+| 172.16.2.0/25    | VLAN03 | R&D                     |
+| 172.16.3.0/26    | VLAN04 | RH                      |
+| 172.16.3.64/26   | VLAN05 | Dir Financière          |
+| 172.16.3.128/27  | VLAN06 | Services Généraux       |
+| 172.16.3.160/27  | VLAN07 | Service Juridique       |
+| 172.16.3.192/27  | VLAN08 | Direction Générale      |
+| 172.16.4.0/25    | VLAN09 | Ventes & Dev Commercial |
+| 172.16.5.0/26    | VLAN10 | Dir Marketing           |
+| 172.16.5.64/26   | VLAN11 | Communication           |
+| 172.16.6.0/27    | VLAN12 | Serveurs prod           |
+| 172.16.6.32/28   | VLAN13 | Serveurs admin          |
+| 192.168.100.0/28 | VLAN14 | DMZ                     |
+| 172.16.7.240/30  | Liaison R1|R3                    |
+| 172.16.7.244/30  | Liaison R1|R2                    |
+| 172.16.7.248/30  | Liaison R2|R1                    |
+
+
+
+
+
+
+
+
+
+
+
 
