@@ -9,7 +9,7 @@ $FilePath = [System.IO.Path]::GetDirectoryName($MyInvocation.MyCommand.Definitio
 
 ### Parametre(s) à modifier
 
-$File = "C:\Users\Administrator\Documents\test.csv" # Pointe vers le CSV
+$File = "C:\Users\Administrator\Documents\ListeRH2.csv" # Pointe vers le CSV
 
 ### Main program
 
@@ -20,18 +20,29 @@ If (-not(Get-Module -Name activedirectory))
     Import-Module activedirectory
 }
 
-$Users = Import-Csv -Path $File -Delimiter "," -Header "Prenom", "Nom", "Matricule", "Company", "Departement", "City", "Office", "Fonction", "Manager", "Telephone"
+$Users = Import-Csv -Path $File -Delimiter ","
 $ADUsers = Get-ADUser -Filter * -Properties *
 $count = 1
+function Format-AdString {
+    param([string]$Texte)
+    $Texte = $Texte -replace '[\u2013\u2014]', '-'
+    $d = $Texte.Normalize([Text.NormalizationForm]::FormD)
+    -join ($d.ToCharArray() | Where-Object {
+        [Globalization.CharUnicodeInfo]::GetUnicodeCategory($_) -ne 'NonSpacingMark'
+        })
+    }
+
 Foreach ($User in $Users)
 {
     Write-Progress -Activity "Création des utilisateurs dans l'OU" -Status "%effectué" -PercentComplete ($Count/$Users.Length*100)
-    $Name              = "$($User.Prenom) $($User.Nom)"
-    $DisplayName       = "$($User.Prenom) $($User.Nom) $($User.Matricule)"  # Affichage "Prenom Nom Matricule"
-    $SamAccountName    = "$($User.Prenom.ToLower()) + "." + $($User.Nom.ToLower())" # Affichage pour session "prenom.nom" 
-    $UserPrincipalName = (($User.Prenom.ToLower() + "." + $User.nom.ToLower()) + "@" + (Get-ADDomain).Forest)
-    $GivenName         = $User.Prenom
-    $Surname           = $User.Nom
+    $Prenom            = Format-AdString $User.Prenom
+    $Nom               = Format-AdString $User.Nom
+    $Name              = "$Prenom $Nom"
+    $DisplayName       = "$Prenom $Nom  $($User.Matricule)"  # Affichage "Prenom Nom Matricule"
+    $SamAccountName    = $User.Matricule.Substring(0,6) # Affichage pour session "prenom.nom" 
+    $UserPrincipalName = (($Prenom.ToLower() + "." + $Nom.ToLower()) + "@" + (Get-ADDomain).Forest)
+    $GivenName         = $Prenom
+    $Surname           = $Nom
     $Matricule         = $User.Matricule
     $City              = $User.City
     $OfficePhone       = $User.Telephone
@@ -61,4 +72,8 @@ Foreach ($User in $Users)
     }
     $Count++
     sleep -Milliseconds 100
+}
+Foreach ($u in $Users){
+$sam = (($u.Prenom) + "." + ($u.Nom)).ToLower() 
+if ($sam.Lengh -gt 20) {Write-Host "Trop Long"}
 }
