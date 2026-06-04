@@ -122,8 +122,8 @@ Liaisons inter-routeurs
 
 Serveur DHCP : 172.16.6.2 (PG-0002-X00002 | Windows Server 2025)
  
-| VLAN   | Département        | Plage DHCP                       | Gateway      | DNS        | Relay     | Statut                        |
-| ------ | ------------------ | ---------------------------      | ------------ | ---------- | --------- | --------------------------    |
+| VLAN   | Département        | Plage DHCP                       | Gateway      | DNS        | Relay     | Statut                   |
+| ------ | ------------------ | ---------------------------      | ------------ | ---------- | --------- | -------------------------|
 | VLAN01 | Developemment Logiciel | 172.16.1.1 > 172.16.1.61     | 172.16.1.62  | 172.16.6.1 | R2 eth1 OK | OPERATIONNEL            |
 | VLAN02 | SI                     | 172.16.1.65 > 172.16.1.125   | 172.16.1.126 | 172.16.6.1 | /          |  Scope créé, en attente |
 | VLAN03 | R&D                    | 172.16.2.1 > 172.16.2.125    | 172.16.2.126 | 172.16.6.1 | /          |  Scope créé, en attente |
