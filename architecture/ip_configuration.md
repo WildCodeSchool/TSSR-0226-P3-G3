@@ -41,6 +41,32 @@
 | R3         | PG-0000-W00053 | eth1      | 172.16.3.62  | /26    | Gateway VLAN04 |
 | R3         | PG-0000-W00053 | eth2      | 172.16.7.242 | /30    | Lien R3 \| R2  |
 
+COnfiguration IP des équipements réseau 
+
+pfSense principale :
+
+| Interface | Bridge Proxmox | Adresse IP      | Réseau        |
+| --------- | -------------- | --------------- | ------------- |
+| WAN       | vmbr1          | 10.0.0.3/28     | 10.0.0.0/28   |
+| LAN       | vmbr300        | 172.16.7.254/21 | 172.16.0.0/21 |
+
+Routes statiques pfSense
+
+| Destination | Masque | Gateway      | Description       | Statut |
+| ----------- | ------ | ------------ | ----------------- | ------ |
+| 172.16.1.0  | /26    | 172.16.7.253 | VLAN01 Dev via R1 | OPERATIONNEL      |
+| 172.16.3.0  | /26    | 172.16.7.253 | VLAN04 RH via R1  | OPERATIONNEL      |
+
+
+
+
+
+
+
+
+
+
+
 
 ## Résumé des plages d'adressage par VLAN 
 
@@ -63,6 +89,12 @@
 | 172.16.7.240/30  | Liaison R1|R3                    |
 | 172.16.7.244/30  | Liaison R1|R2                    |
 | 172.16.7.248/30  | Liaison R2|R1                    |
+
+
+
+
+
+
 
 
 
