@@ -24,8 +24,6 @@
 | Serveur fichier | PG-0032-X00018 | 172.16.6.13 | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL      |
 
 
-
-
 ## Routeur VyOS
 
 | Équipement | Nom VM         | Interface | Adresse IP   | Masque | Rôle           |
