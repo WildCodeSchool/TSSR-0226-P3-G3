@@ -57,7 +57,7 @@ Routes statiques pfSense
 | 172.16.1.0  | /26    | 172.16.7.253 | VLAN01 Dev via R1 | OPERATIONNEL      |
 | 172.16.3.0  | /26    | 172.16.7.253 | VLAN04 RH via R1  | OPERATIONNEL      |
 
-R1 — PG-0000-W00051 (routeur central)
+R1 - PG-0000-W00051 (routeur central)
 
 | Interface | Adresse IP   | Masque | Rôle                    |
 | --------- | ------------ | ------ | ----------------------- |
@@ -74,7 +74,7 @@ Routes statiques R1
 | 172.16.1.0/26 | 172.16.7.250 | VLAN01 via R2     |
 | 172.16.3.0/26 | 172.16.7.246 | VLAN04 via R3     |
 
-R2 — PG-0000-W00052 (passerelle VLAN01).
+R2 - PG-0000-W00052 (passerelle VLAN01).
 
 
 | Interface | Adresse IP   | Masque | Rôle                     |
@@ -92,7 +92,7 @@ Routes statiques R2
 
 DHCP Relay : eth1 > upstream eth0 > server 172.16.6.2  > OPERATIONNELLE
 
-R3 — PG-0000-W00053 (passerelle VLAN04)
+R3 - PG-0000-W00053 (passerelle VLAN04)
 
 | Interface | Adresse IP   | Masque | Rôle                     |
 | --------- | ------------ | ------ | ------------------------ |
