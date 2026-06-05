@@ -19,7 +19,7 @@ Son fondateur est de Lyon, et a décidé d’implanter les locaux dans sa ville 
 
 - Avec le schéma suivant , vous pouvez visualiser l'infrastructure de base de l'entreprise 
 
-"schéma draw.io"
+"schéma Fossflow"
 
 
 
