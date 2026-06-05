@@ -21,9 +21,7 @@ Son fondateur est de Lyon, et a décidé d’implanter les locaux dans sa ville 
 
 "schéma Fossflow"
 
-[!](architecture/ressources/AYMERICDANSCAMILLE.png)
-
-
+![[Schéma Fossflow.png]](architecture/ressources/AYMERICDANSCAMILLE.png)
 
 ### Objectifs finaux
 
