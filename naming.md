@@ -103,6 +103,7 @@ OU=Publicité , OU=Communication, DC=pharmagreen, DC=lan
 | 15  |  |  32768   |
 | 16  |  |  65536   |
 | 17  |  |  131072   |
+
 Exemple : PG-000005-X00001 correspond au serveur DC + DNS (l'AD DS)
            (000001+00004)
 
