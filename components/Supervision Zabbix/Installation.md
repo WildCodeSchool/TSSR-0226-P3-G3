@@ -2,6 +2,7 @@
 ------------------------------------------------------------------------------------------
 ## Sommaire
 - [Installation du Serveur Zabbix](#Installation-du-Serveur-Zabbix)
+- [Installation du SGBD](#Installation-du-SGBD)
 ------------------------------------------------------------------------------------------
 **Prérequis techniques :**
 
@@ -25,4 +26,9 @@ apt update && apt upgrade -y
 - Installation de Zabbix server, du frontend, et de l'agent :
 ```bash
 apt install zabbix-server-mysql zabbix-frontend-php zabbix-nginx-conf zabbix-sql-scripts zabbix-agent
+```
+## Installation du SGBD :
+
+```bash
+apt install mariadb-server
 ```
