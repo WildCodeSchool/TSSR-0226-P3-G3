@@ -1,7 +1,8 @@
 ## **Sommaire**
 - [Configuration de Zabbix](#Configuration-de-Zabbix)
 - [Configuration de Zabbix depuis l'interface Web](#Configuration-de-Zabbix-depuis-l'interface-Web)
-- [Listing des Groupes de Sécurité](#Listing-des-Groupes-de-Sécurité)
+- [Installation et configuration de l'Agent Zabbix](#Installation-et-configuration-de-l'Agent-Zabbix)
+- [Ajout d'un hôte et création d'un groupe](#Ajout-d'un-hôte-et-création-d'un-groupe)
 
 # Configuration du serveur Zabbix
 
