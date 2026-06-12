@@ -2,8 +2,8 @@
 ------------------------------------------------------------------------------------------
 ## Sommaire
 - [Installation de L'AD DS](#Installation-de-L'AD-DS)
-- [Création d'un OU](#Création-d-un-OU)
-- [Création d'un Groupe de Sécurité](#Création-d-un-Groupe-de-Sécurité)
+- [Création des OU](#Création-des-OU)
+- [Création des Groupes de Sécurité](#Création-des-Groupes-de-Sécurité)
 ------------------------------------------------------------------------------------------
 **Prérequis techniques :**
 
@@ -35,7 +35,7 @@ Une fois l'installation terminée l'icone drapeau jaune apparaît, cliquer dessu
 - Cliquer sur Install
 - Une fois que l'installation est terminé, le serveur redémarre
 
-# Création d'un OU
+# Création des OU
 
 **Étapes à suivre :**
 - Dans le Server Manager cliquer sur Tools puis sur Active Directory Users and Computers (Utilisateurs et Ordinateurs)
@@ -46,7 +46,7 @@ Une fois l'installation terminée l'icone drapeau jaune apparaît, cliquer dessu
 - Entrer le nom souhaité et décocher la protection contre la suppression (pour pouvoir corriger plus aisément si besoin)
 - Appliquer ces étapes pour créer les OU et les sous-OU dans les emplacements voulus.
 
-# Création d'un Groupe de Sécurité
+# Création des Groupes de Sécurité
 
 **Étapes à suivre :**
 - Dans le Server Manager cliquer sur Tools puis sur Group Policy Management
