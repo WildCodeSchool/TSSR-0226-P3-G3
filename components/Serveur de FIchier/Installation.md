@@ -1,6 +1,6 @@
 ## Mise en place du Stockage Avancé et des Dossiers Partagés
 
-- [Partitionnement du Stockage](Stockage-:-RAID-1)
+- [Partitionnement du Stockage](Stockage-RAID-1)
 - [Partage de Dossiers](Dossiers-Partagés)
 
 **Prérequis techniques :**
