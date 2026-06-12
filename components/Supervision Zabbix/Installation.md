@@ -2,7 +2,7 @@
 ------------------------------------------------------------------------------------------
 ## Sommaire
 - [Installation du Serveur Zabbix](#Installation-du-Serveur-Zabbix)
-- [Installation du SGBD :](#Installation-du-SGBD-:)
+- [Installation du SGBD :](#Installation-du-SGBD)
 ------------------------------------------------------------------------------------------
 **Prérequis techniques :**
 
