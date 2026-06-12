@@ -161,11 +161,11 @@ Pharmgreen.lan
 
 # Listing des Groupes de Sécurité
 
-- GrpOrdinateurs
-- GrpOrdinateursAdmin
-- GrpOrdinateursDirecteurDeBranche
-- GrpOrdinateursDirection
-- GrpUtilisateurs
-- GrpUtilisateursAdmin
-- GrpOrdinateursDirecteurDeBranche
-- GrpUtilisateursDirection
+- GrpOrdinateurs -> Tous les Ordinateurs
+- GrpOrdinateursAdmin -> Les Ordinateurs d'Administration
+- GrpOrdinateursDirecteurDeBranche -> Les Ordinateurs des Directeurs de Branche
+- GrpOrdinateursDirection -> Les Ordinateurs de la Direction
+- GrpUtilisateurs -> Tous les Utilisateurs
+- GrpUtilisateursAdmin -> Les Administrateurs
+- GrpUtilisateursDirecteurDeBranche -> Les Utilisateurs de l'OU Directeurs de Branche
+- GrpUtilisateursDirection -> Les Utilisateurs de l'OU Direction
