@@ -29,6 +29,8 @@ apt install zabbix-server-mysql zabbix-frontend-php zabbix-nginx-conf zabbix-sql
 ```
 ## Installation du SGBD
 
+- Pour installer MariaDB entrer la cmd suivante :
+
 ```bash
 apt install mariadb-server
 ```
