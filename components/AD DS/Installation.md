@@ -1,9 +1,9 @@
  ## Installation DNS dans le Server Manager
 ------------------------------------------------------------------------------------------
 ## Sommaire
-[Installation de L'AD DS](#Installation-de-L'AD-DS)
-[Création d'un OU](#Création-d'un-OU)
-[Création d'un Groupe de Sécurité](#Création-d'un-Groupe-de-Sécurité)
+- [Installation de L'AD DS](#Installation-de-L'AD-DS)
+- [Création d'un OU](#Création-d'un-OU)
+- [Création d'un Groupe de Sécurité](#Création-d'un-Groupe-de-Sécurité)
 ------------------------------------------------------------------------------------------
 **Prérequis techniques :**
 
