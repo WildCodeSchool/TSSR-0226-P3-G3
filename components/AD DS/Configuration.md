@@ -1,6 +1,7 @@
 ## **Sommaire**
 - [Configuration post-installation](#Configuration-post-installation)
 - [Listing des OU et des sous-OU](#Listing-des-OU-et-des-sous-OU)
+- [Listing des Groupes de Sécurité](#Listing-des-Groupes-de-Sécurité)
 
 # Configuration post-installation
 
@@ -25,6 +26,11 @@ DC = Pharmgreen.lan
 Pharmgreen.lan
 ```
 └─ Conteneur=Pharmgreen
+
+          ├─ OU=ComptesDesactives (pas de sous-OU)
+
+          ├─ OU=Securite (pas de sous-OU)
+
           ├─ OU=Utilisateurs
                     └─ OU = DevLogiciel
 						|-- OU = Developpement
@@ -152,3 +158,14 @@ Pharmgreen.lan
 						|-- OU = RelationsMedias
 						|-- OU = RelationPubliqueEtPresse
 ```
+
+# Listing des Groupes de Sécurité
+
+- GrpOrdinateurs
+- GrpOrdinateursAdmin
+- GrpOrdinateursDirecteurDeBranche
+- GrpOrdinateursDirection
+- GrpUtilisateurs
+- GrpUtilisateursAdmin
+- GrpOrdinateursDirecteurDeBranche
+- GrpUtilisateursDirection
