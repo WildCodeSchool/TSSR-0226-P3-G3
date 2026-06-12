@@ -1,3 +1,6 @@
+## **Sommaire**
+- [Configuration post-installation](#Configuration-post-installation)
+- [Listing des OU et des sous-OU](#Listing-des-OU-et-des-sous-OU)
 
 # Configuration post-installation
 
@@ -23,117 +26,129 @@ Pharmgreen.lan
 ```
 └─ Conteneur=Pharmgreen
           ├─ OU=Utilisateurs
-                    └─ OU = Dev Logiciel
+                    └─ OU = DevLogiciel
 						|-- OU = Developpement
-						|-- OU = Analyse et conception
-						|-- OU = Test et qualité
+						|-- OU = AnalyseEtconception
+						|-- OU = TestEtqualite
 				
-					|-- OU = SI
+					|-- OU = SystemesInformation
 						|-- OU = Data
-						|-- OU = Développement Logiciel
+						|-- OU = DeveloppementLogiciel
+						|-- OU = T0
+						|-- OU = T1
+						|-- OU = T2
 				
 					|-- OU = R&D
-						|-- OU = Innovation et Stratégie
+						|-- OU = InnovationEtStrategie
 						|-- OU = Laboratoire
 				
-					|-- OU = Ressources Humaines
+					|-- OU = RessourcesHumaines
 						|-- OU = Formation
-						|-- OU = Gestion des performances
+						|-- OU = GestionDesPerformances
 						|-- OU = Recrutement
-						|-- OU = Santé et Sécurité au travail
+						|-- OU = SanteEtSecuriteAuTravail
 				
-					|-- OU = Direction Financière
-						|-- OU = Contrôle de Gestion
+					|-- OU = DirectionFinanciere
+						|-- OU = ControleDeGestion
 						|-- OU = Finance
-						|-- OU = Service Comptabilité
+						|-- OU = ServiceComptabilite
 				
-					|-- OU = Services Généraux
-						|-- OU = Gestion Immobilière
+					|-- OU = ServicesGeneraux
+						|-- OU = GestionImmobiliere
 						|-- OU = Logistique
 				
-					|-- OU = Services Juridique
+					|-- OU = ServicesJuridique
 						|-- OU = Contentieux
 						|-- OU = Contrats
-						|-- OU = Propriété Intellectuelle
+						|-- OU = ProprieteIntellectuelle
 				
-					|-- OU = Direction Générale ( pas de sous-OU)
+					|-- OU = DirectionGenerale
+						|-- OU = Direction
+						|-- OU = Secretaire
+						|-- OU = DirecteurDeBranche
 				
-					|-- OU = Ventes & Dev commerciale
+					|-- OU = VentesEtDeveloppementCommercial
 						|-- OU = ADV
 						|-- OU = B2B
 						|-- OU = B2C
-						|-- OU = Développement International
-						|-- OU = Grands Comptes
-						|-- OU = Service Achat
-						|-- OU = Service Client
+						|-- OU = DeveloppementInternational
+						|-- OU = GrandsComptes
+						|-- OU = ServiceAchat
+						|-- OU = ServiceClient
 					
-					|-- OU = Direction Marketing
-						|-- OU = Marketing Digital
-						|-- OU = Marketing Opérationnel
-						|-- OU = Marketing Produit
-						|-- OU = Marketing stratégique
+					|-- OU = DirectionMarketing
+						|-- OU = MarketingDigital
+						|-- OU = MarketingOperationnel
+						|-- OU = MarketingProduit
+						|-- OU = MarketingStrategique
 				
 					|-- Communication
-						|-- OU = Gestion des marques
-						|-- OU = Publicité
-						|-- OU = Relations Médias
-						|-- OU = Relation Publique et Presse
+						|-- OU = GestionDesMarques
+						|-- OU = Publicite
+						|-- OU = RelationsMedias
+						|-- OU = RelationPubliqueEtPresse
 
 
-			├─ OU=Ordinateurs
-                    └─ OU = Dev Logiciel
+          ├─ OU=Ordinateurs
+                    └─ OU = DevLogiciel
 						|-- OU = Developpement
-						|-- OU = Analyse et conception
-						|-- OU = Test et qualité
+						|-- OU = AnalyseEtconception
+						|-- OU = TestEtqualite
 				
-					|-- OU = SI
+					|-- OU = SystemesInformation
 						|-- OU = Data
-						|-- OU = Développement Logiciel
+						|-- OU = DeveloppementLogiciel
+						|-- OU = T0
+						|-- OU = T1
+						|-- OU = T2
 				
 					|-- OU = R&D
-						|-- OU = Innovation et Stratégie
+						|-- OU = InnovationEtStrategie
 						|-- OU = Laboratoire
 				
-					|-- OU = Ressources Humaines
+					|-- OU = RessourcesHumaines
 						|-- OU = Formation
-						|-- OU = Gestion des performances
+						|-- OU = GestionDesPerformances
 						|-- OU = Recrutement
-						|-- OU = Santé et Sécurité au travail
+						|-- OU = SanteEtSecuriteAuTravail
 				
-					|-- OU = Direction Financière
-						|-- OU = Contrôle de Gestion
+					|-- OU = DirectionFinanciere
+						|-- OU = ControleDeGestion
 						|-- OU = Finance
-						|-- OU = Service Comptabilité
+						|-- OU = ServiceComptabilite
 				
-					|-- OU = Services Généraux
-						|-- OU = Gestion Immobilière
+					|-- OU = ServicesGeneraux
+						|-- OU = GestionImmobiliere
 						|-- OU = Logistique
 				
-					|-- OU = Services Juridique
+					|-- OU = ServicesJuridique
 						|-- OU = Contentieux
 						|-- OU = Contrats
-						|-- OU = Propriété Intellectuelle
+						|-- OU = ProprieteIntellectuelle
 				
-					|-- OU = Direction Générale ( pas de sous-OU)
+					|-- OU = DirectionGenerale
+						|-- OU = Direction
+						|-- OU = Secretaire
+						|-- OU = DirecteurDeBranche
 				
-					|-- OU = Ventes & Dev commerciale
+					|-- OU = VentesEtDeveloppementCommercial
 						|-- OU = ADV
 						|-- OU = B2B
 						|-- OU = B2C
-						|-- OU = Développement International
-						|-- OU = Grands Comptes
-						|-- OU = Service Achat
-						|-- OU = Service Client
+						|-- OU = DeveloppementInternational
+						|-- OU = GrandsComptes
+						|-- OU = ServiceAchat
+						|-- OU = ServiceClient
 					
-					|-- OU = Direction Marketing
-						|-- OU = Marketing Digital
-						|-- OU = Marketing Opérationnel
-						|-- OU = Marketing Produit
-						|-- OU = Marketing stratégique
+					|-- OU = DirectionMarketing
+						|-- OU = MarketingDigital
+						|-- OU = MarketingOperationnel
+						|-- OU = MarketingProduit
+						|-- OU = MarketingStrategique
 				
 					|-- Communication
-						|-- OU = Gestion des marques
-						|-- OU = Publicité
-						|-- OU = Relations Médias
-						|-- OU = Relation Publique et Presse
+						|-- OU = GestionDesMarques
+						|-- OU = Publicite
+						|-- OU = RelationsMedias
+						|-- OU = RelationPubliqueEtPresse
 ```
