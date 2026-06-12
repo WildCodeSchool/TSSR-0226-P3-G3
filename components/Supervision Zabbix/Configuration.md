@@ -1,8 +1,8 @@
 ## **Sommaire**
 - [Configuration de Zabbix](#Configuration-de-Zabbix)
-- [Configuration de Zabbix depuis l'interface Web](#Configuration-de-Zabbix-depuis-l'interface-Web)
-- [Installation et configuration de l'Agent Zabbix](#Installation-et-configuration-de-l'Agent-Zabbix)
-- [Ajout d'un hôte et création d'un groupe](#Ajout-d'un-hôte-et-création-d'un-groupe)
+- [Configuration de Zabbix depuis une interface Web](#Configuration-de-Zabbix-depuis-une-interface-Web)
+- [Installation et configuration de l'Agent Zabbix](#Installation-et-configuration-de-l-'-Agent-Zabbix)
+- [Ajout d'un hôte et création d'un groupe](#Ajout-d'un-hôte-et-création-d-'-un-groupe)
 
 # Configuration du serveur Zabbix
 
@@ -42,7 +42,7 @@ systemctl restart zabbix-server zabbix-agent nginx php8.2-fpm
 systemctl enable zabbix-server zabbix-agent nginx php8.2-fpm
 ```
 
-# Configuration de Zabbix depuis l'interface Web
+# Configuration de Zabbix depuis une interface Web
 
 - Depuis un client entrer l'adresse du serveur dans un navigateur en ajoutant le port d'écoute :
 X.X.X.X:8080
