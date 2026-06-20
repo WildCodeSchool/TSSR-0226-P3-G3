@@ -100,7 +100,7 @@ OU=Publicité , OU=Communication, DC=pharmagreen, DC=lan
 | 12  | GESTIONNAIRE DE PARC INFORMATIQUE | 4096   |
 | 13  | GESTION DES LOGS |  8192   |
 | 14  | SUPERVISION |  16384   |
-| 15  |  |  32768   |
+| 15  | VOIP |  32768   |
 | 16  |  |  65536   |
 
 Exemple : PG-00005-X00001 correspond au serveur DC + DNS (l'AD DS)
