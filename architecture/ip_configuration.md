@@ -158,7 +158,7 @@ Routes statiques R3
 
 ## 5. Configuration DHCP
 
-Serveur DCHP : 172.16.6.2 (PG-00002-X00002 | Windows Server 2025) | ID VM 304
+Serveur DHCP : 172.16.6.2 (PG-00002-X00002 | Windows Server 2025) | ID VM 304
 
 | VLAN   | Département            | Plage DHCP                   | Gateway      | DNS        | Relay      | Statut                 |
 | ------ | ---------------------- | ---------------------------- | ------------ | ---------- | ---------- | ---------------------- |
