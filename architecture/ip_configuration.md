@@ -64,6 +64,47 @@
 ---
 ---
 
+## 3. Configuration IP par VLAN
+
+Réseau global : 172.16.0.0/21 DNS pour tous les VLANs : 172.16.6.1 (DC1 AD DS)
+
+---
+
+### 3.1 VLANs utilisateurs
+
+| VLAN   | Département             | Réseau          | Masque          | Gateway      | Broadcast    | Plage utilisable            | Hôtes | Effectif | Bridge  | Statut       |
+| ------ | ----------------------- | --------------- | --------------- | ------------ | ------------ | --------------------------- | ----- | -------- | ------- | ------------ |
+| VLAN01 | Dev Logiciel            | 172.16.1.0/26   | 255.255.255.192 | 172.16.1.62  | 172.16.1.63  | 172.16.1.1 > 172.16.1.61    | 62    | 18       | vmbr301 | OPERATIONNEL |
+| VLAN02 | SI                      | 172.16.1.64/26  | 255.255.255.192 | 172.16.1.126 | 172.16.1.127 | 172.16.1.65 > 172.16.1.125  | 62    | 6        | *       | EN ATTENTE   |
+| VLAN03 | R&D                     | 172.16.2.0/25   | 255.255.255.128 | 172.16.2.126 | 172.16.2.127 | 172.16.2.1 > 172.16.2.125   | 126   | 29       | *       | EN ATTENTE   |
+| VLAN04 | RH                      | 172.16.3.0/26   | 255.255.255.192 | 172.16.3.62  | 172.16.3.63  | 172.16.3.1 > 172.16.3.61    | 62    | 24       | vmbr304 | OPERATIONNEL |
+| VLAN05 | Direction Financière    | 172.16.3.64/26  | 255.255.255.192 | 172.16.3.126 | 172.16.3.127 | 172.16.3.65 > 172.16.3.125  | 62    | 14       | *       | EN ATTENTE   |
+| VLAN06 | Services Généraux       | 172.16.3.128/27 | 255.255.255.224 | 172.16.3.158 | 172.16.3.159 | 172.16.3.129 > 172.16.3.157 | 30    | 12       | *       | EN ATTENTE   |
+| VLAN07 | Service Juridique       | 172.16.3.160/27 | 255.255.255.224 | 172.16.3.190 | 172.16.3.191 | 172.16.3.161 > 172.16.3.189 | 30    | 9        | *       | EN ATTENTE   |
+| VLAN08 | Direction Générale      | 172.16.3.192/27 | 255.255.255.224 | 172.16.3.222 | 172.16.3.223 | 172.16.3.193 > 172.16.3.221 | 30    | 8        | *       | EN ATTENTE   |
+| VLAN09 | Ventes & Dev Commercial | 172.16.4.0/25   | 255.255.255.128 | 172.16.4.126 | 172.16.4.127 | 172.16.4.1 > 172.16.4.125   | 126   | 46       | *       | EN ATTENTE   |
+| VLAN10 | Direction Marketing     | 172.16.5.0/26   | 255.255.255.192 | 172.16.5.62  | 172.16.5.63  | 172.16.5.1 > 172.16.5.61    | 62    | 21       | *       | EN ATTENTE   |
+| VLAN11 | Communication           | 172.16.5.64/26  | 255.255.255.192 | 172.16.5.126 | 172.16.5.127 | 172.16.5.65 > 172.16.5.125  | 62    | 24       | *       | EN ATTENTE   |
+
+Routage :
+
+- VLAN01 : gateway R2 eth1 (172.16.1.62), DHCP relay via R2 > 172.16.6.2
+- VLAN04 : gateway R3 eth1 (172.16.3.62), DHCP relay via R3 > 172.16.6.2
+- VLAN02-03, 05-11 : scopes DHCP créés sur 172.16.6.2, en attente déploiement routeurs/bridges
+
+VMs clientes déployées :
+
+|VM|Nom VM|IP|Gateway|VLAN|Bridge|Statut|
+|---|---|---|---|---|---|---|
+|320|PG-00000-Y00150|172.16.1.1 DHCP|172.16.1.62|VLAN01|vmbr301|Joint au domaine pharmgreen.lan|
+|321|PG-00000-Y00151|172.16.3.1 DHCP|172.16.3.62|VLAN04|vmbr304|Joint au domaine pharmgreen.lan|
+
+
+
+
+
+
+
 ## 4. Configuration IP des équipements réseau
 
 ### 4.1 Firewalls pfSense
