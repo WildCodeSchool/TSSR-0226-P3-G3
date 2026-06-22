@@ -124,3 +124,36 @@ R3 | PG-00000-W00053 (passerelle VLAN04) | ID VM 335
 
 DHCP Relay : écoute sur eth1 > upstream eth0 > server 172.16.6.2 > OPERATIONNEL
 
+### 4.3 Routes statiques
+
+Routes statiques R1
+
+| Destination   | Via          | Description   |
+| ------------- | ------------ | ------------- |
+| 0.0.0.0/0     | 172.16.7.254 | Default \| pfSense |
+| 172.16.1.0/26 | 172.16.7.250 | VLAN01 via R2 |
+| 172.16.3.0/26 | 172.16.7.246 | VLAN04 via R3 |
+
+Routes statiques R2
+
+| Destination   | Via          | Description   |
+| ------------- | ------------ | ------------- |
+| 0.0.0.0/0     | 172.16.7.249 | Default \| R1 |
+| 172.16.3.0/26 | 172.16.7.242 | VLAN04 via R3 |
+
+Routes statiques R3
+
+| Destination   | Via          | Description   |
+| ------------- | ------------ | ------------- |
+| 0.0.0.0/0     | 172.16.7.245 | Default \| R1 |
+| 172.16.1.0/26 | 172.16.7.241 | VLAN01 via R2 |
+
+### 4.4 Liaisons inter-routeurs
+
+| Lien       | IP >         | IP <         | Masque |
+| ---------- | ------------ | ------------ | ------ |
+| R1 \| R2   | 172.16.7.249 | 172.16.7.250 | /30    |
+| R1 \| R3   | 172.16.7.245 | 172.16.7.246 | /30    |
+| R2 \| R3   | 172.16.7.241 | 172.16.7.242 | /30    |
+
+
