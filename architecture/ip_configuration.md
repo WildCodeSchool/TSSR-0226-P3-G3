@@ -68,32 +68,61 @@
 
 ### 4.1 Firewalls pfSense
 
-pfSense principal (frontière LAN > DMZ) :
+Architecture : DMZ en sandwich (srreened subnet) > la DMZ (192.168.100.0/28) est isolée entre deux firewalls pfSense, un côté LAN et un côté WAN.
 
-| Interface | Bridge Proxmox | Adresse IP        | Réseau          |
-| --------- | -------------- | ----------------- | --------------- |
-| LAN (em1) | vmbr300        | 172.16.7.254/21   | 172.16.0.0/21   |
-| DMZ (em0) | vmbr300        | 192.168.100.1/28  | 192.168.100.0/28|
+---
 
-Routes statiques pfSense principal :
+#### pfSense interne (VM 307 | PG-00512-X00005)
+
+Version : pfSense-CE-2.7.2-RELEASE (FreeBSD 14.0)
+
+Interfaces :
+
+| Interface | Label | Bridge Proxmox | Adresse IP       | Réseau           |
+| --------- | ----- | -------------- | ---------------- | ---------------- |
+| em1       | LAN   | vmbr300        | 172.16.7.254/21  | 172.16.0.0/21    |
+| em0       | DMZ   | vmbr300        | 192.168.100.1/28 | 192.168.100.0/28 |
+
+Gateways :
+
+| Nom     | Interface | Gateway        | Rôle                | Statut       |
+| ------- | --------- | -------------- | ------------------- | ------------ |
+| WANGW_2 | DMZ       | 192.168.100.14 | Default (IPv4)      | OPERATIONNEL |
+| R1VyOS  | LAN       | 172.16.7.253   | Next-hop vers VLANs | OPERATIONNEL |
+
+Routes statiques :
 
 | Destination | Masque | Gateway      | Description       | Statut       |
 | ----------- | ------ | ------------ | ----------------- | ------------ |
 | 172.16.1.0  | /26    | 172.16.7.253 | VLAN01 Dev via R1 | OPERATIONNEL |
 | 172.16.3.0  | /26    | 172.16.7.253 | VLAN04 RH via R1  | OPERATIONNEL |
 
-pfSense DMZ (frontière DMZ > WAN) | ID VM 307 :
+NAT Outbound : mode Automatic > trafic LAN NATté en 192.168.100.1 vers la DMZ
 
-| Interface | Bridge Proxmox | Adresse IP        | Réseau           |
-| --------- | -------------- | ----------------- | ---------------- |
-| LAN       | vmbr300        | 192.168.100.14/28 | 192.168.100.0/28 |
-| WAN       | vmbr1          | 10.0.0.3/28       | 10.0.0.0/28      |
+---
 
-Gateway WAN : 10.0.0.1 (vmbr1 Proxmox )   
+#### pfSense externe
+
+Accessible via : https://192.168.100.14
+Version : pfSense-CE-2.7.2-RELEASE (FreeBSD 14.0)
+
+Interfaces :
+
+| Interface | Label | Bridge Proxmox | Adresse IP        | Réseau           |
+| --------- | ----- | -------------- | ----------------- | ---------------- |
+| em0       | WAN   | vmbr1          | 10.0.0.3/28       | 10.0.0.0/28      |
+| em1       | DMZ   | vmbr300        | 192.168.100.14/28 | 192.168.100.0/28 |
+
+Gateway :
+
+| Nom   | Interface | Gateway  | Rôle           | Statut       |
+| ----- | --------- | -------- | -------------- | ------------ |
+| WANGW | WAN       | 10.0.0.1 | Default (IPv4) | OPERATIONNEL |
+
+Routes statiques : aucune
 
 ### 4.2 Routeurs VyOS   
 
-Login : vyos / Azerty1*
 
 R1 | PG-00000-W00051 (routeur central) | ID VM 333
 
