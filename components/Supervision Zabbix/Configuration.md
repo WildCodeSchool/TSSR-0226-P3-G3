@@ -41,6 +41,7 @@ server_name <ici tu rentreras l'adresse IPv4 de ta machine>;
 systemctl restart zabbix-server zabbix-agent nginx php8.2-fpm
 systemctl enable zabbix-server zabbix-agent nginx php8.2-fpm
 ```
+---------------------------------------------------------------------
 
 # Configuration de Zabbix depuis une interface Web
 
@@ -77,3 +78,15 @@ X.X.X.X:8080
    - Ajouter le dans le groupe créé précédemment.
    - Ajouter l'interface _Agent_.
    - Renseigner l'adresse IP du client.
+-------------------------------------------------------------
+ 
+# Déploiement de Zabbix par GPO
+
+- Téléchargez l'agent Zabbix depuis le site officiel [Zabbix](https://www.zabbix.com/fr/download_agents) et déplacez le fichier .msi dans un dossier partagé sur le réseau.
+- Créez un groupe d'hôtes dans la configuration de Zabbix.
+- Ajoutez un groupe pour les serveurs Windows et activez l'auto-registration.
+
+<img width="1196" height="498" alt="Zabbix scan pc" src="https://github.com/user-attachments/assets/946d117b-32b3-41b7-a3b8-ed2ee7bb2346" />
+<img width="1184" height="499" alt="Zabbix scan pc 2" src="https://github.com/user-attachments/assets/95aa1524-7ea9-443f-9ad1-40b2add4649b" />
+
+- Créez un script dans le dossier Zabbix du partage et exécutez-le sur un serveur pour le tester.
