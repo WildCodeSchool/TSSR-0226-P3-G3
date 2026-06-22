@@ -20,16 +20,21 @@
 ## 1.Référence rapide des équipements fixes 
 <span id="Référence-rapide-des-équipements-fixes"></span>
 
-| Équipement      | Nom VM         | Adresse IP  | Masque          | GAWTEAY  | Statut          |
-| --------------- | -------------- | ----------- | --------------- | ----------- | -------------|
-| DC1 ADDS + DNS     | PG-00005-X00001 | 172.16.6.1  | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL  |
-| DC2 Core | PG-00005-X00006 | 172.16.6.4 | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL |
-| DC3 Core | PG-00005-X00007 | 172.16.6.5 | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL |
-| DHCP            | PG-00002-X00002 | 172.16.6.2  | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL |
-| Intranet Web    | PG-00016-X00003 | 172.16.6.3  | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL |
-| Graylog| PG-08192-X00009 | 172.16.6.10 | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL |
-| Serveur fichier | PG-00032-X00018 | 172.16.6.13 | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL |
-| Serveur fichier | PG-00032-X00018 | 172.16.6.13 | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL |
+## VLAN12 | Serveurs de production (172.16.6.0/27)
+
+| Équipement      | Nom VM          | Adresse IP   | Masque          | GATEWAY     | Statut           | ID VM  |
+| --------------- | --------------- | ------------ | --------------- | ----------- | ----------------   | ------ |
+| DC1 ADDS + DNS  | PG-00005-X00001 | 172.16.6.1   | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL       | 301    |
+| DHCP            | PG-00002-X00002 | 172.16.6.2   | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL        | 304    |
+| Intranet Web    | PG-00016-X00003 | 172.16.6.3   | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL     |   305    |
+| DC2 Core        | PG-00005-X00006 | 172.16.6.4   | 255.255.255.224 | 172.16.6.30 | EN ATTENTE PROMO   | 315    |
+| DC3 Core        | PG-00005-X00007 | 172.16.6.5   | 255.255.255.224 | 172.16.6.30 | CONFIG EN COURS  | 316    |
+| Graylog         | PG-08192-X00009 | 172.16.6.10  | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL     | 313    |
+| Serveur fichier | PG-00032-X00021 | 172.16.6.13  | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL        | 308    |
+| Veeam B&R       | PG-00256-X00022 | 172.16.6.14  | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL     | 310    |
+| Veeam Repository| PG-00256-X00023 | 172.16.6.15  | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL     | 311    |
+| Zabbix (CT)     | PG-16384-X00019 | 172.16.6.19  | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL     | CT 352 |
+| VoIP FreePBX    | PG-32768-X00020 | 172.16.6.20  | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL       | 314    |
 
 
 
