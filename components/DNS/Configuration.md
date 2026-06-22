@@ -1,4 +1,4 @@
-Ouvrir la Console **DNS** sur le **Server Manager **
+Ouvrir la Console **DNS** sur le **Server Manager**
 
 --------------------------------------------------------
 
