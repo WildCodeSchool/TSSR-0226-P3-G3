@@ -22,10 +22,19 @@
 
 | Équipement      | Nom VM         | Adresse IP  | Masque          | GAWTEAY  | Statut          |
 | --------------- | -------------- | ----------- | --------------- | ----------- | -------------|
-| ADDS + DNS     | PG-0005-X00001 | 172.16.6.1  | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL  |
-| DHCP            | PG-0002-X00002 | 172.16.6.2  | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL |
-| Intranet Web    | PG-0016-X00003 | 172.16.6.3  | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL |
-| Serveur fichier | PG-0032-X00018 | 172.16.6.13 | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL |
+| DC1 ADDS + DNS     | PG-00005-X00001 | 172.16.6.1  | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL  |
+| DC2 Core | PG-00005-X00006 | 172.16.6.4 | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL |
+| DHCP            | PG-00002-X00002 | 172.16.6.2  | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL |
+| Intranet Web    | PG-00016-X00003 | 172.16.6.3  | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL |
+| Serveur fichier | PG-00032-X00018 | 172.16.6.13 | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL |
+| Serveur fichier | PG-00032-X00018 | 172.16.6.13 | 255.255.255.224 | 172.16.6.30 | OPERATIONNEL |
+
+
+
+
+
+
+
 
 ## Routeur VyOS
 
