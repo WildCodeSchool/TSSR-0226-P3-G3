@@ -88,6 +88,6 @@ pfSense DMZ (frontière DMZ > WAN) | ID VM 307 :
 | LAN       | vmbr300        | 192.168.100.14/28 | 192.168.100.0/28 |
 | WAN       | vmbr1          | 10.0.0.3/28       | 10.0.0.0/28      |
 
-Gateway WAN : 10.0.0.1 (vmbr1 Proxmox node)
+Gateway WAN : 10.0.0.1 (vmbr1 Proxmox )
 
 
