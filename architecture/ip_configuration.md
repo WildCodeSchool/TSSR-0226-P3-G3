@@ -63,5 +63,31 @@
 
 ---
 ---
+## 4. Configuration IP des équipements réseau
+
+### 4.1 Firewalls pfSense
+
+pfSense principal (frontière LAN > DMZ) :
+
+| Interface | Bridge Proxmox | Adresse IP        | Réseau          |
+| --------- | -------------- | ----------------- | --------------- |
+| LAN (em1) | vmbr300        | 172.16.7.254/21   | 172.16.0.0/21   |
+| DMZ (em0) | vmbr300        | 192.168.100.1/28  | 192.168.100.0/28|
+
+Routes statiques pfSense principal :
+
+| Destination | Masque | Gateway      | Description       | Statut       |
+| ----------- | ------ | ------------ | ----------------- | ------------ |
+| 172.16.1.0  | /26    | 172.16.7.253 | VLAN01 Dev via R1 | OPERATIONNEL |
+| 172.16.3.0  | /26    | 172.16.7.253 | VLAN04 RH via R1  | OPERATIONNEL |
+
+pfSense DMZ (frontière DMZ > WAN) | ID VM 307 :
+
+| Interface | Bridge Proxmox | Adresse IP        | Réseau           |
+| --------- | -------------- | ----------------- | ---------------- |
+| LAN       | vmbr300        | 192.168.100.14/28 | 192.168.100.0/28 |
+| WAN       | vmbr1          | 10.0.0.3/28       | 10.0.0.0/28      |
+
+Gateway WAN : 10.0.0.1 (vmbr1 Proxmox node)
 
 
