@@ -1,6 +1,6 @@
 Mise en place de l'environnement d'un serveur de messagerie interne (`pharmgreen.lan`) : préparation de l'hôte, du réseau, du DNS, installation des paquets et préparation système.
 
-> Ce document couvre **l'installation** uniquement. Le paramétrage des services (OpenSMTPD, Dovecot, authentification Active Directory, livraison LMTP, sécurités, validation) est traité dans [`configuration.md`](configuration.md).
+> Ce document couvre **l'installation** uniquement. Le paramétrage des services (OpenSMTPD, Dovecot, authentification Active Directory, livraison LMTP, sécurités, validation) est traité dans [`Configuration.md`](Configuration.md).
 
 ## Sommaire
 
@@ -173,7 +173,7 @@ apt install netcat-openbsd     # fournit "nc -U" (socket Unix)
 
 ### 6.1 Utilisateur et stockage `vmail`
 
-Modèle « utilisateurs virtuels » : un unique compte système possède toutes les boîtes (le détail du modèle est traité dans `configuration.md`).
+Modèle « utilisateurs virtuels » : un unique compte système possède toutes les boîtes (le détail du modèle est traité dans `Configuration.md`).
 
 ```bash
 groupadd -g 5000 vmail
@@ -222,7 +222,7 @@ ls -l /etc/ssl/certs | grep -i pharmgreen
 
 ## 8. Suite
 
-Passer au paramétrage des services : [`configuration.md`](configuration.md)
+Passer au paramétrage des services : [`Configuration.md`](Configuration.md)
 
 - Configuration OpenSMTPD (`/etc/smtpd.conf`, utilisateurs virtuels, relais)
 - Configuration Dovecot (Maildir, IMAP)
