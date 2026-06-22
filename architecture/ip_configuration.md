@@ -156,4 +156,21 @@ Routes statiques R3
 | R1 \| R3   | 172.16.7.245 | 172.16.7.246 | /30    |
 | R2 \| R3   | 172.16.7.241 | 172.16.7.242 | /30    |
 
+## 5. Configuration DHCP
+
+Serveur DCHP : 172.16.6.2 (PG-00002-X00002 | Windows Server 2025) | ID VM 304
+
+| VLAN   | Département            | Plage DHCP                   | Gateway      | DNS        | Relay      | Statut                 |
+| ------ | ---------------------- | ---------------------------- | ------------ | ---------- | ---------- | ---------------------- |
+| VLAN01 | Developpement Logiciel | 172.16.1.1 > 172.16.1.61    | 172.16.1.62  | 172.16.6.1 | R2 eth1 OK | OPERATIONNEL          |
+| VLAN02 | SI                     | 172.16.1.65 > 172.16.1.125  | 172.16.1.126 | 172.16.6.1 | /          | Scope créé, en attente |
+| VLAN03 | R&D                    | 172.16.2.1 > 172.16.2.125   | 172.16.2.126 | 172.16.6.1 | /          | Scope créé, en attente |
+| VLAN04 | RH                     | 172.16.3.1 > 172.16.3.61    | 172.16.3.62  | 172.16.6.1 | R3 eth1 OK | OPERATIONNEL          |
+| VLAN05 | Direction Financière   | 172.16.3.65 > 172.16.3.125  | 172.16.3.126 | 172.16.6.1 | /          | Scope créé, en attente |
+| VLAN06 | Services Généraux      | 172.16.3.129 > 172.16.3.157 | 172.16.3.158 | 172.16.6.1 | /          | Scope créé, en attente |
+| VLAN07 | Service Juridique      | 172.16.3.161 > 172.16.3.189 | 172.16.3.190 | 172.16.6.1 | /          | Scope créé, en attente |
+| VLAN08 | Direction Générale     | 172.16.3.193 > 172.16.3.221 | 172.16.3.222 | 172.16.6.1 | /          | Scope créé, en attente |
+| VLAN09 | Ventes & Dev Commercial| 172.16.4.1 > 172.16.4.125   | 172.16.4.126 | 172.16.6.1 | /          | Scope créé, en attente |
+| VLAN10 | Direction Marketing    | 172.16.5.1 > 172.16.5.61    | 172.16.5.62  | 172.16.6.1 | /          | Scope créé, en attente |
+| VLAN11 | Communication          | 172.16.5.65 > 172.16.5.125  | 172.16.5.126 | 172.16.6.1 | /          | Scope créé, en attente |
 
