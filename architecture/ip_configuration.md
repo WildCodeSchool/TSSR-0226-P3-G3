@@ -65,7 +65,7 @@ Effectif total: 211 collaborateurs
 | ----------------- | ------ | -------------------- |
 | VLANs utilisateurs| 11     | 172.16.1.0 > 172.16.5.127 |
 | VLANs serveurs    | 2      | 172.16.6.0 > 172.16.6.47  |
-| DMZ               | 1      | 192.168.100.0/27           |
+| DMZ               | 1      | 192.168.100.0/28           |
 | Liaisons routeurs  | 3      | 172.16.7.240 > 172.16.7.253 |
 
 **Objectifs**
