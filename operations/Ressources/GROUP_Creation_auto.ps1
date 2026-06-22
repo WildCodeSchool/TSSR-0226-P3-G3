@@ -5,10 +5,10 @@
 #                                     #
 #######################################
 
-### Parametre(s) à modifier
+### Groupes distincts ou plus généraux ?
 
-$OuLabSecurity = "LabSecurite"
-$Groups = "GrpComputers7Zip","GrpUsersChrome","GrpComputersFirefox","GrpUsersWallpaper",`            "GrpUsersWindowsRestrictions","GrpUsers","GrpComputers","GrpAdmins","GrpTEST"
+$OuSecurity = "Sécurité"
+$Groups = "GrpUtilisateurs","GrpUtilisateursAdmin","GrpUtilisateursDirection","GrpUtilisateursDirecteurdeBranche","GrpOrdinateurs","GrpOrdinateursAdmin","GrpOrdinateursDirection","GrpOrdinateursDirecteurdeBranche"
 
 ### Initialisation
 
@@ -20,8 +20,8 @@ Foreach ($Group in $Groups)
 {
     Try
     {
-        New-AdGroup -Name $Group -Path "ou=$OuLabSecurity,$DomainDN" -GroupScope Global -GroupCategory Security
-        Write-Host "Création du GROUPE $Group dans l'OU ou=$OuLabSecurity,$DomainDN"-ForegroundColor Green
+        New-AdGroup -Name $Group -Path "ou=$OuSecurity,ou=Pharmgreen,$DomainDN" -GroupScope Global -GroupCategory Security
+        Write-Host "Création du GROUPE $Group dans l'OU ou=$OuSecurity,ou=Pharmgreen,$DomainDN"-ForegroundColor Green
     }
     Catch
     {
