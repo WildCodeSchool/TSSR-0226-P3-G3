@@ -82,11 +82,14 @@ X.X.X.X:8080
  
 # Déploiement de Zabbix par GPO
 
-- Téléchargez l'agent Zabbix depuis le site officiel [Zabbix](https://www.zabbix.com/fr/download_agents) et déplacez le fichier .msi dans un dossier partagé sur le réseau.
+- Téléchargez **l'agent Zabbix** depuis le site officiel [Zabbix](https://www.zabbix.com/fr/download_agents) et déplacez le fichier .msi dans un dossier partagé sur le réseau.
 - Créez un groupe d'hôtes dans la configuration de Zabbix.
 - Ajoutez un groupe pour les serveurs Windows et activez l'auto-registration.
 
 <img width="1196" height="498" alt="Zabbix scan pc" src="https://github.com/user-attachments/assets/946d117b-32b3-41b7-a3b8-ed2ee7bb2346" />
 <img width="1184" height="499" alt="Zabbix scan pc 2" src="https://github.com/user-attachments/assets/95aa1524-7ea9-443f-9ad1-40b2add4649b" />
 
-- Créez un script dans le dossier Zabbix du partage et exécutez-le sur un serveur pour le tester.
+- Créez un [script](https://github.com/WildCodeSchool/TSSR-0226-P3-G3/blob/main/operations/Ressources/ScriptZabbix.ps1) à joindre dans le dossier Zabbix du partage avec le _fichier d'installation msi_
+- Créez une **GPO Ordinateur**, l'éditer dans **policies** -> **Windows Settings** -> **Scripts** -> dans l'onglet powershell entrer le chemin du script sur **le disque partagé** pour que les machines clientes puisse le récupérer
+<img width="796" height="565" alt="Zabbix scan pc 3" src="https://github.com/user-attachments/assets/0613b70b-7d6a-4963-b648-023eba259041" />
+
