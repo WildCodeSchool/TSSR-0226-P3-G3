@@ -3,6 +3,7 @@
 - [Configuration de Zabbix depuis une interface Web](#Configuration-de-Zabbix-depuis-une-interface-Web)
 - [Installation et configuration de l'Agent Zabbix](#Installation-et-configuration-de-lAgent-Zabbix)
 - [Ajout d'un hôte et création d'un groupe](#Ajout-dun-hôte-et-création-dun-groupe)
+- [Déploiement de Zabbix par GPO](#Déploiement-de-Zabbix-par-GPO)
 
 # Configuration du serveur Zabbix
 
