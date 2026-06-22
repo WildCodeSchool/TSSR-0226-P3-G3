@@ -68,7 +68,7 @@
 
 ### 4.1 Firewalls pfSense
 
-Architecture : DMZ en sandwich (srreened subnet) > la DMZ (192.168.100.0/28) est isolée entre deux firewalls pfSense, un côté LAN et un côté WAN.
+Architecture : DMZ en sandwich (screened subnet) > la DMZ (192.168.100.0/28) est isolée entre deux firewalls pfSense, un côté LAN et un côté WAN.
 
 ---
 
