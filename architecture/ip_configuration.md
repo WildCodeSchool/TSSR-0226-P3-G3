@@ -58,7 +58,7 @@
 
 | Équipement      | Nom VM          | Adresse IP     | Masque          | GATEWAY        | Statut           | ID VM  |
 | --------------- | --------------- | -------------- | --------------- | -------------- | ---------------- | ------ |
-| Web externe     | PG-00016-X00012 | 192.168.100.2  | 255.255.255.240 | 192.168.100.14 | OPERATIONNEL     | 312    |
+| Serveur Web     | PG-00016-X00012 | 192.168.100.2  | 255.255.255.240 | 192.168.100.14 | OPERATIONNEL     | 312    |
 | pfSense DMZ     | PG-00512-X00005 | 192.168.100.14 | 255.255.255.240 | 10.0.0.1       | OPERATIONNEL     | 307    |
 
 ---
@@ -99,9 +99,21 @@ VMs clientes déployées :
 |320|PG-00000-Y00150|172.16.1.1 DHCP|172.16.1.62|VLAN01|vmbr301|Joint au domaine pharmgreen.lan|
 |321|PG-00000-Y00151|172.16.3.1 DHCP|172.16.3.62|VLAN04|vmbr304|Joint au domaine pharmgreen.lan|
 
+### 3.2 VLANs serveurs et DMZ
 
+|VLAN|Zone|Réseau|Masque|Gateway|Broadcast|Plage utilisable|Hôtes|
+|---|---|---|---|---|---|---|---|
+|VLAN12|Serveurs prod|172.16.6.0/27|255.255.255.224|172.16.6.30|172.16.6.31|172.16.6.1 > 172.16.6.29|30|
+|VLAN13|Serveurs admin|172.16.6.32/28|255.255.255.240|172.16.6.30|172.16.6.47|172.16.6.33 > 172.16.6.46|14|
+|VLAN14|DMZ|192.168.100.0/28|255.255.255.240|192.168.100.14|192.168.100.15|192.168.100.1 > 192.168.100.13|14|
 
+Gateway VLAN12 + VLAN13 : R1 eth1 (172.16.6.30) Gateway VLAN14 : pfSense externe (192.168.100.14)
 
+### IPs libres :
+
+- VLAN12 : .6-.9, .11-.12, .16-.18, .21-.29 (18 libres sur 30)
+- VLAN13 : .33, .35-.46 (13 libres sur 14)
+- VLAN14 : .3-.13 (11 libres sur 14)
 
 
 
