@@ -29,7 +29,7 @@
 
 
 
-## 1.Référence rapide des équipements fixes 
+## 1. Référence rapide des équipements fixes 
 
 ## VLAN12 | Serveurs de production (172.16.6.0/27)
 
