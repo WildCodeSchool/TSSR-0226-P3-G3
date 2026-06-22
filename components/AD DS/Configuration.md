@@ -2,6 +2,7 @@
 - [Configuration post-installation](#Configuration-post-installation)
 - [Listing des OU et des sous-OU](#Listing-des-OU-et-des-sous-OU)
 - [Listing des Groupes de Sécurité](#Listing-des-Groupes-de-Sécurité)
+- [Création de la Corbeille AD](#Création-de-la-Corbeille-AD)
 
 # Configuration post-installation
 
@@ -169,3 +170,14 @@ Pharmgreen.lan
 - GrpUtilisateursAdmin -> Les Administrateurs
 - GrpUtilisateursDirecteurDeBranche -> Les Utilisateurs de l'OU Directeurs de Branche
 - GrpUtilisateursDirection -> Les Utilisateurs de l'OU Direction
+
+# Création de la Corbeille AD
+
+
+- Une fois l'installation terminée, pour ouvrir la **Corbeille**, cliquer sur **Tools** pour sélectionner **Active Directory Administrative Center**
+
+<img width="1134" height="188" alt="Tuto Bin" src="https://github.com/user-attachments/assets/959576b6-20f7-4073-905b-0fe3e31cf3ea" />
+
+- Ensuite dans l'onglet de gauche cliquer sur le _domaine local_ puis sur **Deleted Objects**
+
+<img width="944" height="294" alt="Tuto Bin2" src="https://github.com/user-attachments/assets/a6ccefeb-f5c3-4ea2-9328-4ff913928264" />
