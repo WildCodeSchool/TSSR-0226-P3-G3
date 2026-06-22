@@ -2,8 +2,20 @@
 
 ## Sommaire 
 
-- [1. Référence rapide des équipement fixes](#Référence-rapide-des-équipements-fixes)
- 
+1. [Référence rapide des équipements fixes](#1-référence-rapide-des-équipements-fixes)
+2. [Vue d'ensemble du plan d'adressage](#2-vue-densemble-du-plan-dadressage)
+3. [Configuration IP par VLAN](#3-configuration-ip-par-vlan)
+   - 3.1 [VLANs utilisateurs](#31-vlans-utilisateurs)
+   - 3.2 [VLANs serveurs et DMZ](#32-vlans-serveurs-et-dmz)
+4. [Configuration IP des équipements réseau](#4-configuration-ip-des-équipements-réseau)
+   - 4.1 [Firewalls pfSense](#41-firewalls-pfsense)
+   - 4.2 [Routeurs VyOS](#42-routeurs-vyos)
+   - 4.3 [Routes statiques](#43-routes-statiques)
+   - 4.4 [Liaisons inter-routeurs](#44-liaisons-inter-routeurs)
+5. [Configuration DHCP](#5-configuration-dhcp)
+6. [Configuration DNS](#6-configuration-dns)
+7. [Récapitulatif de l'utilisation des adresses](#7-récapitulatif-de-lutilisation-des-adresses)
+   
 ---
 
 
@@ -185,12 +197,6 @@ Serveur DHCP : 172.16.6.2 (PG-0002-X00002 | Windows Server 2025)
 | 172.16.7.240/30  | Liaison R1|R3                    |
 | 172.16.7.244/30  | Liaison R1|R2                    |
 | 172.16.7.248/30  | Liaison R2|R1                    |
-
-
-
-
-
-
 
 
 
