@@ -1,3 +1,6 @@
+# Installation du serveur de messagerie
+
+
 Mise en place de l'environnement d'un serveur de messagerie interne (`pharmgreen.lan`) : préparation de l'hôte, du réseau, du DNS, installation des paquets et préparation système.
 
 > Ce document couvre **l'installation** uniquement. Le paramétrage des services (OpenSMTPD, Dovecot, authentification Active Directory, livraison LMTP, sécurités, validation) est traité dans [`Configuration.md`](Configuration.md).
