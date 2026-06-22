@@ -12,23 +12,29 @@ Mise en place de l'environnement d'un serveur de messagerie interne (`pharmgreen
 - [6. Préparation système](#6-préparation-système)
 - [7. Vérification post-installation](#7-vérification-post-installation)
 - [8. Suite](#8-suite)
-- [Compétences REAC](#compétences-reac)
 
 ---
 
 ## 1. Architecture cible
 
-```
-LAN (172.16.0.0/21)
-   │
-   ├─ DC / AD-DS / AD CS : 172.16.6.1  (pg-00005-x00001.pharmgreen.lan)
-   │
-pfSense interne ── DMZ (192.168.100.0/28) ── pfSense externe ── WAN
-                      │
-                      └─ CT mail : 192.168.100.3  (mail.pharmgreen.lan)
-                            • OpenSMTPD  (MTA, réception SMTP + relais)
-                            • Dovecot    (IMAP + LMTP, auth LDAP)
-                            • Stockage   /var/vmail
+```mermaid
+flowchart LR
+    WAN([WAN])
+
+    subgraph LANZONE["LAN — 172.16.0.0/21"]
+        DC["DC · AD-DS · AD CS 172.16.6.1 pg-00005-x00001.pharmgreen.lan"]
+    end
+
+    subgraph DMZZONE["DMZ — 192.168.100.0/28"]
+        MAIL["Conteneur serveur mail  192.168.100.3 mail.pharmgreen.lan OpenSMTPD + relaisDovecot — /var/vmail"]
+    end
+
+    DC --- PFINT[/"pfSense interne"/]
+    PFINT --- MAIL
+    MAIL --- PFEXT[/"pfSense externe"/]
+    PFEXT --- WAN
+
+    MAIL -.->|"LDAPS 636"| DC
 ```
 
 | Élément               |                                                     |
