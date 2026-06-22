@@ -19,16 +19,6 @@
 ---
 
 
-**Objectifs**
-
-- Segmenter le réseau par département via des VLANs dédiés.
-- Attribuer des plages IP adaptées à la taille de chaque département.
-- Isoler les serveurs des postes utilisateurs.
-- Sécuriser les accès via pfSense (WAN/LAN/DMZ).
-- Anticiper la croissance future de l'entreprise.
-
-
-
 ## 1. Référence rapide des équipements fixes 
 <span id="Référence-rapide-des-équipements-fixes"></span>
 
@@ -63,6 +53,29 @@
 
 ---
 ---
+
+## 2. Vue d'ensemble du plan d'adressage
+
+Réseau global : 172.16.0.0/21 (172.16.0.0 > 172.16.7.255)
+Architecture : DMZ en sandwich (screened subnet) entre deux firewalls pfSense
+vDmaine AD : pharmgreen.lan
+Effectif total: 211 collaborateurs
+
+| Zone              | Nombre | Plage               |
+| ----------------- | ------ | -------------------- |
+| VLANs utilisateurs| 11     | 172.16.1.0 > 172.16.5.127 |
+| VLANs serveurs    | 2      | 172.16.6.0 > 172.16.6.47  |
+| DMZ               | 1      | 192.168.100.0/27           |
+| Liaisons routeurs  | 3      | 172.16.7.240 > 172.16.7.253 |
+
+**Objectifs**
+
+- Segmenter le réseau par département via des VLANs dédiés.
+- Attribuer des plages IP adaptées à la taille de chaque département.
+- Isoler les serveurs des postes utilisateurs.
+- Sécuriser les accès via pfSense (WAN/LAN/DMZ).
+- Anticiper la croissance future de l'entreprise.
+
 
 ## 3. Configuration IP par VLAN
 
