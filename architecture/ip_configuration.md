@@ -63,6 +63,7 @@
 
 ---
 ---
+
 ## 4. Configuration IP des équipements réseau
 
 ### 4.1 Firewalls pfSense
@@ -88,6 +89,38 @@ pfSense DMZ (frontière DMZ > WAN) | ID VM 307 :
 | LAN       | vmbr300        | 192.168.100.14/28 | 192.168.100.0/28 |
 | WAN       | vmbr1          | 10.0.0.3/28       | 10.0.0.0/28      |
 
-Gateway WAN : 10.0.0.1 (vmbr1 Proxmox )
+Gateway WAN : 10.0.0.1 (vmbr1 Proxmox )   
 
+### 4.2 Routeurs VyOS   
+
+Login : vyos / Azerty1*
+
+R1 | PG-00000-W00051 (routeur central) | ID VM 333
+
+| Interface | Adresse IP   | Masque | Rôle                    |
+| --------- | ------------ | ------ | ----------------------- |
+| eth0      | 172.16.7.253 | /21    | > pfSense LAN           |
+| eth1      | 172.16.6.30  | /27    | Gateway VLAN12 + VLAN13 |
+| eth2      | 172.16.7.249 | /30    | Lien R1 \| R2           |
+| eth3      | 172.16.7.245 | /30    | Lien R1 \| R3           |
+
+R2 | PG-00000-W00052 (passerelle VLAN01) | ID VM 334
+
+| Interface | Adresse IP   | Masque | Rôle                     |
+| --------- | ------------ | ------ | ------------------------ |
+| eth0      | 172.16.7.250 | /30    | R1                       |
+| eth1      | 172.16.1.62  | /26    | Gateway VLAN01 \| vmbr301|
+| eth2      | 172.16.7.241 | /30    | Lien R2 \| R3            |
+
+DHCP Relay : eth1 > upstream eth0 > server 172.16.6.2 > OPERATIONNEL
+
+R3 | PG-00000-W00053 (passerelle VLAN04) | ID VM 335
+
+| Interface | Adresse IP   | Masque | Rôle                     |
+| --------- | ------------ | ------ | ------------------------ |
+| eth0      | 172.16.7.246 | /30    | R1                       |
+| eth1      | 172.16.3.62  | /26    | Gateway VLAN04 \| vmbr304|
+| eth2      | 172.16.7.242 | /30    | Lien R3 \| R2            |
+
+DHCP Relay : écoute sur eth1 > upstream eth0 > server 172.16.6.2 > OPERATIONNEL
 
