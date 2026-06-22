@@ -74,6 +74,7 @@ Architecture : DMZ en sandwich (srreened subnet) > la DMZ (192.168.100.0/28) est
 
 #### pfSense interne (VM 307 | PG-00512-X00005)
 
+Accessible via : https://172.16.7.254
 Version : pfSense-CE-2.7.2-RELEASE (FreeBSD 14.0)
 
 Interfaces :
