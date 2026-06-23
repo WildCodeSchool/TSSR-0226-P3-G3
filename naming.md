@@ -91,8 +91,8 @@ OU=Publicité , OU=Communication, DC=pharmagreen, DC=lan
 | 3   | MESSAGERIE         | 8      |
 | 4   | WEB                | 16     |
 | 5   | SERVEUR FICHIER    | 32     |
-| 6   | SERVEUR DIRECTION  | 64     |
-| 7   | SERVEUR LOGICIEL   | 128    |
+| 6   |   | 64     |
+| 7   | DEPLOIEMENT   | 128    |
 | 8   | BACK UP            | 256    |
 | 9   | FIREWALL           | 512    |
 | 10  | BASTION            | 1024   |
