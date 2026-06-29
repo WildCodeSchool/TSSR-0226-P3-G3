@@ -35,10 +35,10 @@ Rechercher RSAT**
 
 
 
-![[Installer-RSAT-GUI-3.png]]
+![[Installer-RSAT-GUI-3.png]](
 
 
-![[Installer-RSAT-GUI -4.png]]
+![[Installer-RSAT-GUI -4.png]](
 
 
 ---
@@ -52,7 +52,7 @@ Pour activer le service RDP (Remote Desktop Product) suivre le chemin a parcouri
 
 Cliquer su démarrer -> Paramètres -> Système -> Bureau à distance -> Activer.
 
-![[Activer-RDP-Graphique-1.png]]
+![[Activer-RDP-Graphique-1.png]](
 
 ---
 #### - En ligne de commande via PowerShell
@@ -64,7 +64,7 @@ Enable-PSRemoting -Force
 `````
 
 
-![[Activer-RDP-Powershell-2.png]]
+![[Activer-RDP-Powershell-2.png]](
 
 
 ---
@@ -77,7 +77,7 @@ Pour vérifier si le service WinRM existe ou non sur votre machine, saisissez la
 Get-Service WinRM
 ````
 
-![[Install-WinRM-Status-1.png]]
+![[Install-WinRM-Status-1.png]](
 
 #### Configuration de WinRM
 
@@ -88,7 +88,7 @@ Pour cela, ouvrez une console PowerShell en tant qu'Administrateur puis saisisse
 Enable-PSRemoting
 ````
 
-![[Install-WinRM-config-2.png]]
+![[Install-WinRM-config-2.png]](
 
 ---
 
@@ -98,7 +98,7 @@ Enable-PSRemoting
 
 Sur Windows 11, l'accès RDP s'active dans les "**Paramètres**" du système en suivant le chemin suivant : **Paramètres > Système > Bureau à distance**.
 
-![[Activer-RDP-Graphique-1 1.png]]
+![[Activer-RDP-Graphique-1 1.png]](
 
 
 ---
@@ -109,7 +109,7 @@ Les Utilitaires de résolution des problèmes de Sysinternals ont été regroup�
 
 Il est possible de télécharger Sysinternals Suite a partir du Microsoft Store
 
-![[Install-SysinternalsSuite-WindowsStore-1.png]]
+![[Install-SysinternalsSuite-WindowsStore-1.png]](
 
 ---
 
@@ -123,7 +123,7 @@ Il est possible de télécharger Sysinternals Suite a partir du Microsoft Store
 Ouvrir le navigateur internet et se rendre sur le site de Git afin de télécharger la version git Bash pour Windows 
 "https://git-scm.com/install/windows"
 
-![[Install-GitBash-Windows11-1.png]]
+![[Install-GitBash-Windows11-1.png]](
 
 Lancer le téléchargement et ensuite lancer l'installeur.
 
@@ -261,7 +261,7 @@ Cette commande active les fonctionnalités nécessaires pour exécuter WSL et in
 3. Une fois l'installation terminée, aller dans "démarrer", lancer Ubuntu.
 4. Configurer le nom d'utilisateur et le mot de passe et valider.
 
-![[Windows-Ubuntu-lancement.png]](components/PC Administration Windows/Ressources/Windows-Ubuntu-lancement.png)
+![[Windows-Ubuntu-lancement.png]](Windows-Ubuntu-lancement.png)
 
 ## Mettre à jour et mettre à niveau des packages
 
