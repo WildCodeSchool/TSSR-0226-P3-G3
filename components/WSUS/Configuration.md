@@ -4,6 +4,7 @@
 
 - [Configuration du service WSUS](#Configuration-du-service-WSUS)
 - [Liaison avec les ordinateurs du domaine](#Liaison-avec-les-ordinateurs-du-domaine)
+- [Gestion des mises à jour](#Gestion-des-mises-à-jour)
 ------------------------------------------------------------------------------------------
 
 # Configuration du service WSUS
@@ -42,7 +43,7 @@ Sur le serveur WSUS :
   - GrpOrdinateurs
   - GrpOrdinateursAdmin
   - GrpServeursDC
-  - GrpServeursNonDC
+  - GrpServeursNotDC
 
 ## Application par GPO
 
@@ -61,7 +62,7 @@ Sur le serveur WSUS :
     - Dans les options mettre :
       - Dans **Configure automatic updating** sélectionner **4- Auto Download and schedule the install**
       - Dans **Scheduled install day** mettre **0 - Every day** pour une mise à jour quotidienne
-      - Dans **Scheduled install time** mettre l'heure désirée (par exemple **09:00**)
+      - Dans **Scheduled install time** mettre l'heure désirée (par exemple **07:00**)
       - Cocher **Every week**
       - Cocher **Install updates for other Microsoft Products**
   - Aller dans **Enable client-side targeting** qui fait la liaison avec les groupes crées dans **WSUS**
@@ -71,3 +72,37 @@ Sur le serveur WSUS :
   - Aller dans **Turn off auto-restart for updates during active hours** qui permet d'empêcher les machines de redémarrer après l'installation d'une mise à jour pendant leurs heures d'utilisations
     - Cocher **Enabled**
     - Dans les options, mettre (par exemple) **8 AM - 6 PM**
+
+Adapter une nouvelle GPO, basée sur celle précédemment créée, pour le groupe **GrpOrdinateursAdmin**
+
+Pour le groupe **GrpServeursNotDC** : 
+- Copier la GPO Ordinateurs, la renommer pour quelle s'adapte à ce groupe 
+- Ne pas toucher à la partie commune et modifier uniquement la partie spécifique à cette GPO :
+  - Aller dans **Configure Automatic Updates**
+    - Dans les options mettre :
+      - Dans **Configure automatic updating** sélectionner **7- Auto Download, Notify to restart**
+      - Dans **Scheduled install day** mettre **0 - Every day**
+      - Dans **Scheduled install time** mettre l'heure désirée (par exemple **07:00**)
+      - Cocher **Every week**
+      - Ne pas cocher **Install updates for other Microsoft Products**
+  - Aller dans **Enable client-side targeting** qui fait la liaison avec les groupes crées dans **WSUS**
+    - Coche **Enabled**
+    - Dans les options, mettre le nom du groupe WSUS pour les ordinateurs cible, dont ici les serveurs
+    - Valide la configuration
+
+Pour le groupe **GrpServeursDC** :
+- Copier la GPO Serveur non DC, la renommer pour quelle s'adapte à ce groupe
+- Ne pas toucher à la partie commune et modifier uniquement la partie spécifique à cette GPO :
+  - Aller dans **Enable client-side targeting** qui fait la liaison avec les groupes crées dans **WSUS**
+    - Coche **Enabled**
+    - Dans les options, mettre le nom du groupe WSUS pour les ordinateurs cible, dont ici les contrôleurs de domaine
+    - Valide la configuration
+
+Une fois les GPO crées et configurées, lie les aux OU dans lesquelles sont tes machines clientes puis mettre à jour les GPO sur les machines clientes
+
+# Gestion des mises à jour
+
+Sur le serveur **WSUS**, aller dans la partie **Updates** et sélectionner **Security Updates**.
+Sélectionner des mises à jour et ouvrir le menu d'approbation avec le clic droit de la souris.
+On peut retrouver les groupes que précédemmet créés sous l'arborescence **All Computers**.
+On peut, pour chacun des groupes, appliquer les différentes mises à jour ou bien les bloquer.
