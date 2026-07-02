@@ -1,66 +1,51 @@
-
 # ============================================================
-# Fonction commune de journalisation - Projet 3
-# Utilisable par les scripts PowerShell actuels et futurs.
+# Script de test des blocs de début et de fin
+# Aucune modification Active Directory
 # ============================================================
 
-function Write-Projet3Log {
-    param(
-        [Parameter(Mandatory = $true)]
-        [ValidateSet("INFO", "WARNING", "ERROR")]
-        [string]$Niveau,
+# Début de la journalisation
+$Projet3JournalisationDisponible = $false
 
-        [Parameter(Mandatory = $true)]
-        [string]$Message,
+try {
+    . "C:\Projet3\Scripts\Journalisation\Write-Projet3Log.ps1"
 
-        [Parameter(Mandatory = $true)]
-        [int]$EventId,
-
-        [Parameter(Mandatory = $true)]
-        [string]$NomScript
+    $Projet3NomScript = [System.IO.Path]::GetFileNameWithoutExtension(
+        $PSCommandPath
     )
 
-    $DossierLogs = "C:\Projet3\Logs\Powershell"
-    $NomJournalWindows = "Application"
-    $SourceJournalWindows = "Projet3-Scripts-Powershell"
+    Write-Projet3Log `
+        -Niveau "INFO" `
+        -Message "Démarrage du script." `
+        -EventId 1000 `
+        -NomScript $Projet3NomScript
 
-    # Création du dossier central s'il n'existe pas
-    if (-not (Test-Path -LiteralPath $DossierLogs)) {
-        New-Item -Path $DossierLogs -ItemType Directory -Force | Out-Null
+    $Projet3JournalisationDisponible = $true
+}
+catch {
+    Write-Warning "La journalisation de début a échoué : $($_.Exception.Message)"
+}
+
+# ============================================================
+# Action sans danger servant uniquement de test
+# ============================================================
+
+Write-Host "Le contenu principal du script est en cours d'exécution."
+Start-Sleep -Seconds 2
+Write-Host "Le contenu principal du script est terminé."
+
+# ============================================================
+# Fin de la journalisation
+# ============================================================
+
+if ($Projet3JournalisationDisponible) {
+    try {
+        Write-Projet3Log `
+            -Niveau "INFO" `
+            -Message "Le script a atteint la fin de son exécution." `
+            -EventId 1001 `
+            -NomScript $Projet3NomScript
     }
-
-    # Un seul fichier de log pour le script appelant
-    $FichierLog = Join-Path $DossierLogs "$NomScript.log"
-
-    $Horodatage = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-    $Utilisateur = "$env:USERDOMAIN\$env:USERNAME"
-
-    $LigneLog = "$Horodatage | $Niveau | $NomScript.ps1 | $env:COMPUTERNAME | $Utilisateur | $Message"
-
-    # Écriture dans le fichier propre au script
-    Add-Content -LiteralPath $FichierLog -Value $LigneLog -Encoding UTF8
-
-    # Correspondance entre nos niveaux et Windows
-    switch ($Niveau) {
-        "INFO"    { $TypeEvenement = "Information" }
-        "WARNING" { $TypeEvenement = "Warning" }
-        "ERROR"   { $TypeEvenement = "Error" }
-    }
-
-    # Écriture dans l'Observateur d'événements
-    if ([System.Diagnostics.EventLog]::SourceExists($SourceJournalWindows)) {
-
-        $MessageWindows = "[$NomScript.ps1] [$Niveau] [$env:COMPUTERNAME] [$Utilisateur] $Message"
-
-        Write-EventLog `
-            -LogName $NomJournalWindows `
-            -Source $SourceJournalWindows `
-            -EventId $EventId `
-            -EntryType $TypeEvenement `
-            -Message $MessageWindows
-    }
-    else {
-        $Alerte = "$Horodatage | WARNING | $NomScript.ps1 | Source Windows absente : $SourceJournalWindows"
-        Add-Content -LiteralPath $FichierLog -Value $Alerte -Encoding UTF8
+    catch {
+        Write-Warning "La journalisation de fin a échoué : $($_.Exception.Message)"
     }
 }
