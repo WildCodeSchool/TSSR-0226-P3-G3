@@ -1,14 +1,14 @@
 
 ######################################################################################################
 #                                                                                                    #
-#                           Ajout du du téléphone de chaque utilisateur                                   #
+#                           Ajout du du téléphone de chaque utilisateur                              #
 #                                                                                                    #
 ######################################################################################################
 
 $FilePath = [System.IO.Path]::GetDirectoryName($MyInvocation.MyCommand.Definition)
 
 ### Localisation du Fichier .CSV
-# Le les utilisateurs doivent être rangé avec leur "Matricule" et les Managers avec leur "Prenom Nom" ou "Prenom Nom Matricule"
+# Les utilisateurs doivent être rangés avec leur "Matricule" et leur numéro de "Ipphone" ainsi que "Telephone"
 $File = "C:\Users\Administrator\Documents\Scripts\ListeRhVoIP.csv" # Pointe vers le CSV
 
 ### Main program
@@ -23,11 +23,11 @@ If (-not(Get-Module -Name activedirectory))
 $Users = Import-Csv -Path $File -Delimiter ","
 $count = 1
 
-# Ajout des numéros de telephone mobile et IP pour les utilisateurs AD
+# Ajout des numÃ©ros de telephone mobile et IP pour les utilisateurs AD
 Foreach ($User in $Users)
 {
     $SamAccountName = $User.Matricule.Substring(0,6) # Affichage pour session "Matricule" 
-    $Telephone      = $User.Telephone.Trim() # Trim filtre les parasites (types retour à la ligne)
+    $Telephone      = $User.Telephone.Trim() # Trim filtre les parasites (types retour Ã  la ligne)
     $VoIP           = $User.Ipphone.Trim()
     
     try {
@@ -41,9 +41,9 @@ Foreach ($User in $Users)
             } else {
                 Set-ADUser -Identity $SamAccountName -Clear ipPhone
             }
-            Write-Host "Le t�l�phone $Telephone et l'Ipphone $VoIP de l'utilisateur $SamAccountName ont bien �t� configur�s" -ForegroundColor Green
+            Write-Host "Le téléphone $Telephone et l'Ipphone $VoIP de l'utilisateur $SamAccountName ont bien été configurés" -ForegroundColor Green
     } catch {
-        Write-Host "La configuration pour l'utilisateur $SamAccountName a �chou� : $($_.Exception.Message)" -ForegroundColor Red
+        Write-Host "La configuration pour l'utilisateur $SamAccountName a échoué : $($_.Exception.Message)" -ForegroundColor Red
     }
     
     $Count++
