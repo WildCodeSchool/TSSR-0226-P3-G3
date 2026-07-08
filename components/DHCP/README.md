@@ -1,4 +1,4 @@
-# Service DHCP | Pharmgreen
+# Service DHCP - Pharmgreen
 
 ## Vue d'ensemble
 
@@ -10,7 +10,7 @@ Le service DHCP centralise l'attribution dynamique d'adresses IP pour l'ensemble
 |**OS**|Windows Server 2022|
 |**IP**|172.16.6.2/27|
 |**Gateway**|172.16.6.30 (R1 eth1)|
-|**Zone réseau**|VLAN12 — Serveurs prod|
+|**Zone réseau**|VLAN12 - Serveurs prod|
 |**Domaine**|pharmgreen.lan|
 |**Nombre de scopes**|11 (un par VLAN utilisateur)|
 
