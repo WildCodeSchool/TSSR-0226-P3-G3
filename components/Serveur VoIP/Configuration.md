@@ -4,7 +4,7 @@
 
 - [Finaliser la configuration générale](#Finaliser-la-configuration-générale)
 - [Quelques exemples de possibilités](#Quelques-exemples-de-possibilités)
-- [FAQ](#FAQ)
+  
 ------------------------------------------------------------------------------------------
 ## Finaliser la configuration générale
 
