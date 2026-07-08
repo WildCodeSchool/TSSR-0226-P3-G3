@@ -19,7 +19,7 @@
 - Une fois que tout est terminé, cliquer sur **Apply config**
 - Dans la fenêtre d'activation, cliquer sur **Activate** et attendre que l'activation se fasse
 - Dans les fenêtres qui s'affichent, cliquer sur **Skip**
-- Côté AD, utiliser ce [script](#operations/Ressources/AddIpPhone.ps1) pour ajouter les Numéros de Téléphone Ip aux utilisateurs de l'AD
+- Côté AD, utiliser ce [script](operations/Ressources/AddIpPhone.ps1) pour ajouter les Numéros de Téléphone Ip aux utilisateurs de l'AD
 - Côté interface Web : **Configurer User Manager => Directories => Add** pour amorçer la synchronisation LDAPS
 - Configuration à appliquer (à adapter selon l'environnement) :
    - Secure Connection Type : SSL
