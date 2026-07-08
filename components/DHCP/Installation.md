@@ -1,25 +1,71 @@
-## Installation DHCP dans le Server Manager
+# Installation du rôle DHCP — Pharmgreen
 
-**Prérequis techniques :**
-Avoir un Windows Server 2025 à jour
-Le serveur doit avoir une adresse IP statique
+## Serveur cible
 
-**Étapes à suivre :**
-- Aller dans le Server Manager
-- Cliquer sur Manage -> Add Roles and Features pour démarrer l'ajout du rôle DHCP
-- Cliquer sur Next
-- Laisser l'option sélectionnée par défaut Role-Based or feature-based installation et cliquer sur Next
-- Garder le serveur sélectionné et cliquer sur Next
-- Cocher le rôle DHCP Server
-- Une fenêtre contextuelle va apparaître, il faut cliquer sur Add Features pour inclure les outils d'administration proposés
-- Cliquer sur Next 3 fois
-- Cliquer sur Install et ensuite sur Close pour laisser l'installation en arrière-plan
+| Élément | Valeur |
+|---|---|
+| VM Proxmox | 304 |
+| Hostname | PG-00002-X00002 |
+| OS | Windows Server 2022 GUI |
+| IP | 172.16.6.2/27 |
+| Gateway | 172.16.6.30 |
+| DNS | 172.16.6.1 (DC1) |
+| Zone réseau | VLAN12 — Serveurs prod |
 
-Une fois que l'icone triangle jaune apparait en haut du Server Manager, cliquer dessus et cliquer sur Complete DHCP configuration
-Cliquer sur Commit puis Close
+## Prérequis
 
-Une fois l'installation terminée (quand DHCP apparaît dans la partie gauche du Server Manager) il est possible d'ouvrir grâce à l'une de ces méthodes :
-- Cliquer sur l'icone DHCP dans le panneau gauche de la console
-    - Cliquer avec le bouton droit de la souris sur le serveur sélectionné
-    - Cliquer sur DHCP Manager
-- Cliquer dans Tools puis sur DHCP
+- Le serveur est joint au domaine `pharmgreen.lan`
+- L'adressage IP statique est configuré
+- Connectivité réseau vers DC1 (172.16.6.1) confirmée
+
+## 1. Ajout du rôle DHCP Server
+
+1. Ouvrir **Server Manager** → cliquer sur **Manage** → **Add Roles and Features**
+
+
+2. Dans le wizard :
+   - **Installation Type** : Role-based or feature-based installation
+   - **Server Selection** : sélectionner `PG-00002-X00002.pharmgreen.lan`
+   - **Server Roles** : cocher **DHCP Server**
+
+
+3. Un popup propose d'ajouter les outils de gestion (DHCP Management Tools) → cliquer **Add Features**
+
+4. Poursuivre avec **Next** jusqu'à la page de confirmation → cliquer **Install**
+
+
+5. Attendre la fin de l'installation — ne pas fermer la fenêtre
+
+## 2. Configuration post-installation
+
+Après l'installation, une notification apparaît dans Server Manager (drapeau jaune ⚠️).
+
+1. Cliquer sur le **drapeau de notification** → **Complete DHCP configuration**
+
+
+2. Le wizard de post-installation s'ouvre :
+   - **Authorization** : le serveur DHCP est autorisé dans Active Directory avec les credentials de l'utilisateur connecté (doit être un compte admin du domaine)
+   - Cliquer **Commit** → vérifier que les deux étapes affichent ✅ Done
+
+
+3. Cliquer **Close**
+
+## 3. Vérification
+
+### Vérifier que la console DHCP est accessible
+
+1. **Server Manager** → **Tools** → **DHCP**
+2. La console DHCP s'ouvre avec le serveur `pg-00002-x00002.pharmgreen.lan` listé
+3. Déplier le serveur → les nœuds **IPv4** et **IPv6** doivent être visibles avec une icône verte ✅
+
+### Vérifier le service
+
+Ouvrir **Services** (`services.msc`) et vérifier :
+
+| Service | Nom | État attendu | Démarrage |
+|---|---|---|---|
+| DHCP Server | DHCPServer | Running | Automatic |
+
+## Étape suivante
+
+Le rôle est installé et autorisé → passer à la création des scopes dans [Configuration.md](Configuration.md).
