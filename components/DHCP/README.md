@@ -12,7 +12,7 @@ Le service DHCP centralise l'attribution dynamique d'adresses IP pour l'ensemble
 |**Gateway**|172.16.6.30 (R1 eth1)|
 |**Zone réseau**|VLAN12 - Serveurs prod|
 |**Domaine**|pharmgreen.lan|
-|**Nombre de scopes**|11 (un par VLAN utilisateur)|
+|**Nombre de scopes**|11 (un par VLAN utilisateur) |
 
 ## Architecture DHCP Relay
 
