@@ -22,6 +22,7 @@
 - Côté AD, utiliser ce [script](https://github.com/WildCodeSchool/TSSR-0226-P3-G3/blob/main/operations/Ressources/AddIpPhone.ps1) pour ajouter les Numéros de Téléphone Ip aux utilisateurs de l'AD
 - Côté interface Web : **Configurer User Manager => Directories => Add** pour amorçer la synchronisation LDAPS
 - Configuration à appliquer (à adapter selon l'environnement) :
+
    - Secure Connection Type : SSL
    - Host(s) : PG-00005-X00001.pharmgreen.lan (sans préfixe ldaps://)
    - Port : 636
@@ -41,6 +42,7 @@
 - Sur l'écran du **SIP phone**, cliquer sur **Set account** pour avoir la fenêtre **Accounts**
 - En cliquant sur **New**, la fenêtre de création de compte **Account settings** apparaît
 - Pour configurer la ligne de l'utilisatrice Marie Dupont, rentre les informations comme ceci :
+
      - Account Name : Joséphine Angegardien
      - Caller ID : 10100
      - Extension : 10100
@@ -53,31 +55,40 @@
 ## Quelques exemples de possibilités
 
 1 - **Création d'utilisateurs et de lignes sur le serveur** :
+
     - Aller dans le menu **Applications** puis **Extensions**
     - Aller sur l'onglet **SIP [chan_pjsip] Extensions** et cliquer sur le bouton **+Add New SIP [chan_pjsip] Extension**
     - Pour créer la 1ère ligne, celle de Joséphine Angegardien par exemple, renseigner les informations suivante :
+    
             - User Extension : 10100
             - Display Name : Joséphine Angegardien
             - Secret : 1234
             - Password For New User : 1234
+            
     - Cliquer sur le bouton **Submit** puis **Apply Config** pour enregistrer l'utilisateur
 
 2 - **Renvois d'appel** :
+
     - Dans **Follow-Me List** mettre le numéro vers lequel renvoyer, par exemple 10200
     - **Initial Ring Time** est le temps en secondes avant le transfert d'appel, mettre 5
     - **Follow-Me Ring Time** est le temps (ajouté à **Initial Ring Time**) avant que l'appel s’arrête. Mettre 10.
     - Mettre **Yes** pour **Enable Followme**, cela active le transfert d'appel 
     - Cliquer sur **Submit** puis **Apply Config**
+    
 _L'appel vers 10100 sera alors transféré à 10200 si le premier ne décroche pas au bout des 5 secondes_
 
 3 - **Pool d'appel** :
+
     - Aller dans **Applications -> Ring Groups** et cliquer sur **Add Ring Group**
     - Dans le menu :
+    
           - Ring-Group Number : 20100
           - Group Description : Help-Desk (par exemple)
           - Extension List : 10100 et 10200 en dessous
           - Ring Strategy : ringall
           - Ring Time : 15
           - Destination if no answer : Terminate Call - Hangup
+          
     - Cliquer sur **Submitpuis Apply Config**
+    
 _Si 10500 appelle le 20100 alors les téléphones de 10100 ET 10200 vont sonner en même temps_
