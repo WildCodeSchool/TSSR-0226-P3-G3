@@ -10,7 +10,7 @@ Le serveur doit avoir une adresse IP statique.
 Le serveur doit faire parti d'un domaine et est sur le meme fuseau que le DC.
 Le DNS du serveur est configuré.
 Notre serveur hébergeant WAPT s'appellera "srv-wapt".
-
+/!\ IMPORTANT /!\ Pour pouvoir déployer des OS automatiquement il est impératif de disposer d'une clé d'essaie WAPT ou de la version Premium du logiciel
 
 -----------------------------------------------------------------------------------------
 
