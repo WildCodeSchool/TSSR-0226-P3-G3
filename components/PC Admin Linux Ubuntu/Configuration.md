@@ -22,8 +22,8 @@
 - Pour permettre la connexion d'un utilisateur AD sans entrer "prenom@nom@domaine" et seulement le nom aller dans : ```bash sudo nano /etc/sssd/sssd.conf ```
 Puis dans [domain/pharmgreen.lan] ajouter/modifier :
 
-```bash use_fully_qualified_names = False
-        fallback_homedir = /home/%u ```
+```bash "use_fully_qualified_names = False"
+        "fallback_homedir = /home/%u" ```
 
 Suivi de : ```bash sudo systemctl restart sssd ```
 
