@@ -174,6 +174,11 @@ Pharmgreen.lan
 
 # Création de la Corbeille AD
 
+- Lancer cette commande en adaptant le chemin à l'environnement local :
+```powershell
+Enable-ADOptionalFeature -Identity "CN=Recycle Bin Feature,cn=optional features,cn=directory service,cn=windows NT,cn=services,cn=configuration,DC=pharmgreen,DC=lan" `
+>> -Scope ForestOrConfigurationSet -Target "pharmgreen.lan"
+```
 
 - Une fois l'installation terminée, pour ouvrir la **Corbeille**, cliquer sur **Tools** pour sélectionner **Active Directory Administrative Center**
 
