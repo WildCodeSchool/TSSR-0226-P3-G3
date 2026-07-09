@@ -3,6 +3,7 @@
 - [Listing des OU et des sous-OU](#Listing-des-OU-et-des-sous-OU)
 - [Listing des Groupes de Sécurité](#Listing-des-Groupes-de-Sécurité)
 - [Création de la Corbeille AD](#Création-de-la-Corbeille-AD)
+- [Restrictions Horaires](#Restrictions-Horaires)
 
 # Configuration post-installation
 
@@ -181,3 +182,19 @@ Pharmgreen.lan
 - Ensuite dans l'onglet de gauche cliquer sur le _domaine local_ puis sur **Deleted Objects**
 
 <img width="944" height="294" alt="Tuto Bin2" src="https://github.com/user-attachments/assets/a6ccefeb-f5c3-4ea2-9328-4ff913928264" />
+
+
+# Restrictions Horaires
+
+- Ouvrir l'onglet **Tools** et sélectionner **AD Administrative Center**
+
+<img width="1048" height="265" alt="1 1" src="https://github.com/user-attachments/assets/a04df373-e5f6-4961-8557-8bfbe40b43e3" />
+
+- Aller dans l'OU souhaité pour pouvoir y sélectionner les Utilisateurs voulus
+
+<img width="854" height="485" alt="1 1 2" src="https://github.com/user-attachments/assets/d7dd973d-8f10-4548-aa80-08a5b52820c8" />
+
+- Cliquer sur **Propriétés** puis cliquer sur **logonHours** pour restreindre de manière désirée
+
+<img width="658" height="315" alt="1 2" src="https://github.com/user-attachments/assets/05547cb8-c7f6-403b-ae64-c93f257a0169" />
+
