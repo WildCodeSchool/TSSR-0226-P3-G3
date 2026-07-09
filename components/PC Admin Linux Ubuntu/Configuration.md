@@ -22,8 +22,9 @@
 - Pour permettre la connexion d'un utilisateur AD sans entrer "prenom@nom@domaine" et seulement le nom aller dans : ```bash sudo nano /etc/sssd/sssd.conf ```
 Puis dans [domain/pharmgreen.lan] ajouter/modifier :
 
-```bash use_fully_qualified_names = False ```
-```bash fallback_homedir = /home/%u ```
+```bash use_fully_qualified_names = False
+fallback_homedir = /home/%u
+```
 
 Suivi de : ```bash sudo systemctl restart sssd ```
 
@@ -32,13 +33,15 @@ Suivi de : ```bash sudo systemctl restart sssd ```
 ```bash mkdir ~/adsys-templates
 sudo chown -R $USER:$USER ~/adsys-templates
 cd ~/adsys-templates
-sudo adsysctl policy admx all ```
+sudo adsysctl policy admx all
+```
 
 - Les Récupérer sur le DC en les diffusant via http :
 
 ```bash
 cd ~/adsys-templates
-sudo python3 -m http.server 8333 ```
+sudo python3 -m http.server 8333
+```
 
 Depuis le DC ouvrir une page web "http://ipmachineubuntu:8333
 
