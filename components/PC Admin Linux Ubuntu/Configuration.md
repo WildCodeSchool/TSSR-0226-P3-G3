@@ -2,11 +2,11 @@
 ------------------------------------------------------------------------------------------
 ## Sommaire
 
-- [](#)
-- [](#)
+- [Préparation et Ajout au Domaine](#Préparation-et-Ajout-au-Domaine)
+- [Mise en place de GPO](#Mise-en-place-de-GPO)
 - [FAQ](#FAQ)
 ------------------------------------------------------------------------------------------
-## Mise en place de GPO
+## Préparation et Ajout au Domaine
 
 - Vérifier la synchro horaire : ```bash sudo apt install -y chrony
                                     timedatectl ```
@@ -36,6 +36,9 @@ sudo python3 -m http.server 8333 ```
 Depuis le DC ouvrir une page web "http://ipmachineubuntu:8333
 
 Mettre les templates **ADMX/ADML** dans **PolicyDefinitions** sous **SYSVOL**
+
+
+## Mise en place de GPO
 
 ## FAQ
 
