@@ -5,7 +5,9 @@
 - [Préparation et Ajout au Domaine](#Préparation-et-Ajout-au-Domaine)
 - [Mise en place de GPO](#Mise-en-place-de-GPO)
 - [FAQ](#FAQ)
+
 ------------------------------------------------------------------------------------------
+
 ## Préparation et Ajout au Domaine
 
 - Vérifier la synchro horaire : ```bash sudo apt install -y chrony
@@ -19,26 +21,34 @@
 
 - Pour permettre la connexion d'un utilisateur AD sans entrer "prenom@nom@domaine" et seulement le nom aller dans : ```bash sudo nano /etc/sssd/sssd.conf ```
 Puis dans [domain/pharmgreen.lan] ajouter/modifier :
+
 ```bash use_fully_qualified_names = False
 fallback_homedir = /home/%u ```
+
 Suivi de : ```bash sudo systemctl restart sssd ```
 
 - Générer les templates ADMX/ADML :
+
 ```bash mkdir ~/adsys-templates
 sudo chown -R $USER:$USER ~/adsys-templates
 cd ~/adsys-templates
 sudo adsysctl policy admx all ```
 
 - Les Récupérer sur le DC en les diffusant via http :
+
 ```bash
 cd ~/adsys-templates
 sudo python3 -m http.server 8333 ```
+
 Depuis le DC ouvrir une page web "http://ipmachineubuntu:8333
 
 Mettre les templates **ADMX/ADML** dans **PolicyDefinitions** sous **SYSVOL**
 
+------------------------------------------------------------------------------
 
 ## Mise en place de GPO
+
+------------------------------------------------------------------------------
 
 ## FAQ
 
