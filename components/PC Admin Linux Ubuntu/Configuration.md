@@ -28,6 +28,12 @@ fallback_homedir = /home/%u
 
 Suivi de : ```bash sudo systemctl restart sssd ```
 
+- Activer UbuntuPro pour permettre l'application de GPO :
+      -  ```bash sudo apt install ubuntu-advantage-tools -y ```
+      - Se connecter sur le [site Ubuntu](https://ubuntu.com/pro) pour récupérer un token gratuit jusque 5 machines.
+      - sudo pro attach LE_TOKEN_ICI
+      - Vérifier avec ```bash pro status ```
+  
 - Générer les templates ADMX/ADML :
 
 ```bash mkdir ~/adsys-templates
@@ -43,14 +49,22 @@ cd ~/adsys-templates
 sudo python3 -m http.server 8333
 ```
 
-Depuis le DC ouvrir une page web "http://ipmachineubuntu:8333
+- Depuis le DC ouvrir une page web "http://ipmachineubuntu:8333"
+- Mettre les templates **ADMX/ADML** dans **PolicyDefinitions** sous **SYSVOL**
 
-Mettre les templates **ADMX/ADML** dans **PolicyDefinitions** sous **SYSVOL**
+<img width="367" height="134" alt="Ubuntu gpo4 coller dans sysvol (dans le reseau) et dans policydefinitions" src="https://github.com/user-attachments/assets/0ba40a8f-9018-4500-8cfe-7499fd921ba2" />
+
 
 ------------------------------------------------------------------------------
 
 ## Mise en place de GPO
 
+- Choisir une GPO de la meme maniere que pour une machine Windows, un menu Ubuntu apparaissant dans 
+
+<img width="781" height="405" alt="image" src="https://github.com/user-attachments/assets/cba822ae-a422-4d76-87b6-e6ae32167747" />
+
+- L'équivalent Ubuntu de gpupdate /force : ```bash sudo adsysctl policy update -av ```
+- L'équivalent Ubuntu de gpresult /R : ```bash sudo adsysctl policy applied --details ```
 ------------------------------------------------------------------------------
 
 ## FAQ
