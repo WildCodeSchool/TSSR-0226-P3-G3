@@ -23,7 +23,7 @@
 Puis dans [domain/pharmgreen.lan] ajouter/modifier :
 
 ```bash use_fully_qualified_names = False
-fallback_homedir = /home/%u ```
+        fallback_homedir = /home/%u ```
 
 Suivi de : ```bash sudo systemctl restart sssd ```
 
