@@ -91,7 +91,7 @@ OU=Publicité , OU=Communication, DC=pharmagreen, DC=lan
 | 3   | MESSAGERIE         | 8      |
 | 4   | WEB                | 16     |
 | 5   | SERVEUR FICHIER    | 32     |
-| 6   |   | 64     |
+| 6   | SERVEUR DE MOT DE PASSE | 64     |
 | 7   | DEPLOIEMENT   | 128    |
 | 8   | BACK UP            | 256    |
 | 9   | FIREWALL           | 512    |
@@ -101,7 +101,7 @@ OU=Publicité , OU=Communication, DC=pharmagreen, DC=lan
 | 13  | GESTION DES LOGS |  8192   |
 | 14  | SUPERVISION |  16384   |
 | 15  | VOIP |  32768   |
-| 16  |  |  65536   |
+| 16  | DETECTION D'INTRUSION |  65536   |
 
 Exemple : PG-00005-X00001 correspond au serveur DC + DNS (l'AD DS)
            (00001+00004)
