@@ -11,8 +11,10 @@
 ## Préparation et Ajout au Domaine
 
 - Vérifier la synchro horaire :
-``` sudo apt install -y chrony
-    timedatectl
+
+```bash
+sudo apt install -y chrony
+timedatectl
 ```
 
 - Installer les paquets nécessaires : ``` sudo apt install -y realmd sssd sssd-tools libnss-sss libpam-sss adcli samba-common-bin oddjob oddjob-mkhomedir packagekit krb5-user adsys ```
