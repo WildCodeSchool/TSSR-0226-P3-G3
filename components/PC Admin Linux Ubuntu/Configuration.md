@@ -22,17 +22,18 @@
 - Pour permettre la connexion d'un utilisateur AD sans entrer "prenom@nom@domaine" et seulement le nom aller dans : ``` sudo nano /etc/sssd/sssd.conf ```
 Puis dans [domain/pharmgreen.lan] ajouter/modifier :
 
-```bash use_fully_qualified_names = False
+```bash
+use_fully_qualified_names = False
 fallback_homedir = /home/%u
 ```
 
 Suivi de : ``` sudo systemctl restart sssd ```
 
 - Activer UbuntuPro pour permettre l'application de GPO :
-      -  ```bash sudo apt install ubuntu-advantage-tools -y ```
+      -  ``` sudo apt install ubuntu-advantage-tools -y ```
       - Se connecter sur le [site Ubuntu](https://ubuntu.com/pro) pour récupérer un token gratuit jusque 5 machines.
       - sudo pro attach LE_TOKEN_ICI
-      - Vérifier avec ```bash pro status ```
+      - Vérifier avec ``` pro status ```
   
 - Générer les templates ADMX/ADML :
 
@@ -63,8 +64,8 @@ sudo python3 -m http.server 8333
 
 <img width="781" height="405" alt="image" src="https://github.com/user-attachments/assets/cba822ae-a422-4d76-87b6-e6ae32167747" />
 
-- L'équivalent Ubuntu de gpupdate /force : ```bash sudo adsysctl policy update -av ```
-- L'équivalent Ubuntu de gpresult /R : ```bash sudo adsysctl policy applied --details ```
+- L'équivalent Ubuntu de gpupdate /force : ``` sudo adsysctl policy update -av ```
+- L'équivalent Ubuntu de gpresult /R : ``` sudo adsysctl policy applied --details ```
 ------------------------------------------------------------------------------
 
 ## FAQ
