@@ -10,23 +10,23 @@
 
 ## Préparation et Ajout au Domaine
 
-- Vérifier la synchro horaire : ```bash sudo apt install -y chrony
+- Vérifier la synchro horaire : ``` sudo apt install -y chrony
                                     timedatectl ```
 
-- Installer les paquets nécessaires : ```bash sudo apt install -y realmd sssd sssd-tools libnss-sss libpam-sss adcli samba-common-bin oddjob oddjob-mkhomedir packagekit krb5-user adsys ```
+- Installer les paquets nécessaires : ``` sudo apt install -y realmd sssd sssd-tools libnss-sss libpam-sss adcli samba-common-bin oddjob oddjob-mkhomedir packagekit krb5-user adsys ```
 
-- Joindre le domaine (remplacer administrateur par le compte qui sert de passerelle) : ```bash sudo realm join --verbose --user=administrateur pharmgreen.lan ```
+- Joindre le domaine (remplacer administrateur par le compte qui sert de passerelle) : ``` sudo realm join --verbose --user=administrateur pharmgreen.lan ```
 
-- Vérifier l'état de la connection avec l'AD : ```bash sudo systemctl status sssd ``` (doit être en running/enabled) et ```bash klist -k ``` (voir si la machine a un compte côté AD)
+- Vérifier l'état de la connection avec l'AD : ``` sudo systemctl status sssd ``` (doit être en running/enabled) et ``` klist -k ``` (voir si la machine a un compte côté AD)
 
-- Pour permettre la connexion d'un utilisateur AD sans entrer "prenom@nom@domaine" et seulement le nom aller dans : ```bash sudo nano /etc/sssd/sssd.conf ```
+- Pour permettre la connexion d'un utilisateur AD sans entrer "prenom@nom@domaine" et seulement le nom aller dans : ``` sudo nano /etc/sssd/sssd.conf ```
 Puis dans [domain/pharmgreen.lan] ajouter/modifier :
 
 ```bash use_fully_qualified_names = False
 fallback_homedir = /home/%u
 ```
 
-Suivi de : ```bash sudo systemctl restart sssd ```
+Suivi de : ``` sudo systemctl restart sssd ```
 
 - Activer UbuntuPro pour permettre l'application de GPO :
       -  ```bash sudo apt install ubuntu-advantage-tools -y ```
