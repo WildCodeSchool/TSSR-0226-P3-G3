@@ -1,1 +1,2 @@
-
+Get-ADUser freeradius -Properties DistinguishedName,UserPrincipalName,Enabled | 
+Select-Object SamAccountName,UserPrincipalName,DistinguishedName,Enabled
