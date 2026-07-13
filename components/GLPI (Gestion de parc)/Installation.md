@@ -117,3 +117,150 @@ Ensuite on va modifier les paramètres suivants :
 
 Fermer le fichier et redémarrer la machine.
 
+
+# Configuration Apache
+
+Créer le VirtualHost.
+
+```bash
+nano /etc/apache2/sites-available/glpi.conf
+```
+
+Exemple.
+
+```apache
+<VirtualHost *:80>
+
+ServerName glpi.lab.lan
+
+DocumentRoot /var/www/glpi/public
+
+<Directory /var/www/glpi/public>
+
+Require all granted
+
+AllowOverride All
+
+</Directory>
+
+</VirtualHost>
+```
+
+Activer le site.
+
+```bash
+a2ensite glpi.conf
+```
+
+Activer les modules.
+
+```bash
+a2enmod rewrite
+
+a2enmod headers
+```
+
+Redémarrer Apache.
+
+```bash
+systemctl restart apache2
+```
+
+---
+
+# Installation via navigateur
+
+Accéder à :
+
+```
+http://glpi.pharmgreen.lan
+```
+
+Suivre l'assistant :
+
+- langue française ;
+- accepter la licence ;
+- installation ;
+- connexion à MariaDB ;
+- sélectionner la base glpi ;
+- terminer l'installation.
+
+---
+
+# Authentification Active Directory
+
+Configurer LDAP.
+
+Paramètres principaux :
+
+- Serveur LDAP
+- Domaine lab.lan
+- Base DN
+- Compte de lecture LDAP
+- Synchronisation automatique des utilisateurs
+
+Les utilisateurs Active Directory peuvent alors se connecter directement sur GLPI.
+
+---
+
+# Comptes par défaut
+
+Après installation :
+
+Utilisateur :
+
+```
+glpi
+```
+
+Mot de passe :
+
+```
+glpi
+```
+
+Ces comptes sont modifiés ou supprimés dès la première connexion.
+
+---
+
+# Vérifications
+
+Vérifier :
+
+- Apache actif
+
+```bash
+systemctl status apache2
+```
+
+- MariaDB actif
+
+```bash
+systemctl status mariadb
+```
+
+- Accès HTTPS
+
+```
+https://glpi.lab.lan
+```
+
+- Connexion LDAP
+
+Importer un utilisateur Active Directory.
+
+- Inventaire
+
+Vérifier qu'un poste apparaît dans GLPI.
+
+---
+
+# Résultat attendu
+
+Le serveur GLPI est opérationnel.
+
+Les utilisateurs Active Directory peuvent s'authentifier.
+
+Les postes clients remontent automatiquement leur inventaire.
+
+
