@@ -1,11 +1,40 @@
-# Installation du serveur GLPI 
+
+# Installation de GLPI
+
+---
+
+# Objectif
+
+Installer une solution de gestion de parc informatique (GLPI) permettant :
+
+- la gestion des utilisateurs ;
+- la gestion des équipements ;
+- la gestion des tickets ;
+- la gestion des logiciels ;
+- la gestion de l'inventaire automatique ;
+- l'authentification via Active Directory.
+
+---
+
+# Prérequis
+
+## Machine virtuelle
+
+| Élément    | Valeur          |
+| ---------- | --------------- |
+| OS         | Debian 13       |
+| Nom        | srv-glpi        |
+| Adresse IP | XXX.XXX.XXX.XXX |
+| Domaine    | pharmgreen.lan  |
+| RAM        | 4 Go minimum    |
+| CPU        | 2 vCPU          |
+| Disque     | 40 Go           |
 
 
-#### Pré-requis 
-
-GLPI a besoin d'**un serveur Web, de PHP et d'une base de données** pour fonctionner.
 
 Nous allons utiliser une machine sous **Debian 13** et nous allons installer dessus **Apache2, PHP 8.4 ainsi que MariaDB**.
+
+---
 
 ## Installer le socle LAMP
 
@@ -39,6 +68,7 @@ Puis nous allons associer GLPI avec un annuaire LDAP comme l'Active Directory, v
 
 L'installation d' Apache2, MariaDB, PHP et un ensemble d'extensions.
 
+---
 
 ## Préparer une base de données pour GLPI
 
@@ -67,6 +97,8 @@ Puis, nous allons exécuter les **requêtes SQL** ci-dessous pour **créer la
 4 quit
 ```
 
+---
+
 
 ## Télécharger GLPI via GitHub
 
@@ -91,6 +123,7 @@ On va modifier les droits :
  chown -R www-data:www-data /var/www/glpi.pharmgreen.lan/
  chmod -R 775 /var/www/glpi.pharmgreen.lan/
 ```
+---
 
 ## Configuration du site
 
@@ -102,6 +135,8 @@ On va modifier les droits :
 on va modifier le "documentroot" du site :  
 
 DocumentRoot /var/www/glpi
+
+---
 
 
 ## Configuration de PHP
@@ -116,6 +151,8 @@ Ensuite on va modifier les paramètres suivants :
 - session.use_trans_sid = `0`
 
 Fermer le fichier et redémarrer la machine.
+
+---
 
 
 # Configuration Apache
