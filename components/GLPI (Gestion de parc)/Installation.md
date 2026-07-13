@@ -31,6 +31,17 @@ Installer une solution de gestion de parc informatique (GLPI) permettant :
 | Disque     | 40 Go           |
 
 
+Le serveur doit disposer :
+
+- d'une IP fixe
+
+- d'un accès Internet
+
+- d'une résolution DNS
+
+- d'un accès au contrôleur de domaine
+
+- d'un accès au serveur de base de données (local)
 
 Nous allons utiliser une machine sous **Debian 13** et nous allons installer dessus **Apache2, PHP 8.4 ainsi que MariaDB**.
 
