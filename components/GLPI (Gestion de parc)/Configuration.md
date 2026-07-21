@@ -652,25 +652,6 @@ Le profil `Super-Admin` a été ajouté manuellement au compte `U00001` dans ses
 
 ---
 
-## 18. Preuves à conserver pour le compte rendu
-
-Les captures suivantes permettent de prouver le fonctionnement de la configuration :
-
-1. adresse IP et nom d'hôte du serveur GLPI ;
-2. état `active (running)` d'Apache et de MariaDB ;
-3. résultat `Syntax OK` de `apache2ctl configtest` ;
-4. accès à l'interface web de GLPI ;
-5. test réussi de l'annuaire LDAP/LDAPS ;
-6. résultat `result: 0 Success` de `ldapsearch` ;
-7. liste des utilisateurs importés depuis l'Active Directory ;
-8. utilisateur standard avec le profil `Self-Service` ;
-9. disparition du menu Administration pour l'utilisateur standard ;
-10. compte `U00001` avec l'habilitation `Super-Admin` ;
-11. ticket pris en charge, traité, résolu et clôturé ;
-12. message de test du serveur GLPI visible dans Graylog.
-
----
-
 ## 19. Règles de sécurité appliquées
 
 - ne pas publier les mots de passe dans GitHub ;
@@ -685,31 +666,6 @@ Les captures suivantes permettent de prouver le fonctionnement de la configurati
 
 ---
 
-## 20. Correspondance avec le REAC TSSR
-
-Cette réalisation mobilise principalement les compétences suivantes :
-
-- **Assurer le support utilisateur en centre de services** : création, qualification, traitement, résolution et clôture d'un ticket ;
-- **Exploiter des serveurs Windows et un domaine Active Directory** : comptes, groupes, authentification LDAP/LDAPS et droits ;
-- **Exploiter des serveurs Linux** : Apache, MariaDB, PHP, journaux, services et diagnostic ;
-- **Exploiter un réseau IP** : adressage, DNS, connectivité et ports ;
-- **Maintenir des serveurs dans une infrastructure virtualisée** : VM sous Proxmox, contrôle des ressources et utilisation de clones ;
-- **Mettre en œuvre une démarche de résolution de problème** : observation, diagnostic, correction et test de validation.
-
----
-
-## 21. Éléments non présentés comme validés dans cette documentation
-
-Les éléments suivants ont été évoqués ou préparés dans certains supports, mais aucune preuve finale suffisante n'a été conservée dans le périmètre utilisé pour rédiger ce fichier :
-
-- envoi réel des notifications par un serveur SMTP ;
-- déploiement généralisé de GLPI Agent sur les postes ;
-- inventaire automatique complet du parc ;
-- publication HTTPS définitive de l'interface GLPI avec Caddy ou un certificat de la PKI interne.
-
-Ils ne doivent être ajoutés comme « réalisés » dans GitHub qu'après un test concluant et une capture de validation.
-
----
 
 ## 22. Conclusion
 
