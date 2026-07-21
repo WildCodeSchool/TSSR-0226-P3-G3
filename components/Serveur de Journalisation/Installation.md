@@ -1047,26 +1047,6 @@ sudo journalctl -u graylog-server -n 50 --no-pager
 
 ---
 
-## 37. Preuves à conserver
-
-Les preuves suivantes permettent de démontrer que l’installation fonctionne :
-
-1. matériel de la VM dans Proxmox ;
-2. résultat de `hostnamectl` ;
-3. résultat de `ip -br a` ;
-4. résultat de `ip route` ;
-5. ping réussi vers `172.16.6.30` ;
-6. état `active (running)` de MongoDB ;
-7. état `active (running)` de Graylog Data Node ;
-8. état `active (running)` de Graylog Server ;
-9. ports `27017`, `8999`, `9000` et `9200` ;
-10. identifiants temporaires Preflight visibles dans le journal, mot de passe masqué ;
-11. écran de l’assistant Preflight ;
-12. interface Graylog accessible ;
-13. connexion réussie avec le compte `admin` ;
-14. résultat de `df -h`.
-
----
 
 ## 38. État obtenu à la fin de l’installation
 
@@ -1089,18 +1069,6 @@ La création des inputs, des streams, des règles de routage, des alertes et l�
 
 ---
 
-## 39. Correspondance avec le REAC TSSR
-
-Cette installation mobilise principalement les compétences suivantes :
-
-- **Exploiter des serveurs Linux** : gestion des paquets, services, journaux, réseau et diagnostic ;
-- **Exploiter un réseau IP** : adressage statique, passerelle, ports et tests de communication ;
-- **Maintenir des serveurs dans une infrastructure virtualisée** : création et exploitation d’une VM Proxmox ;
-- **Maintenir et sécuriser les accès à Internet et les interconnexions des réseaux** : centralisation et conservation des journaux ;
-- **Mettre en œuvre une démarche de résolution de problème** : analyse des services, ports, journaux, ressources et stockage ;
-- **Mettre à jour les documents d’exploitation** : traçabilité des installations, configurations et tests.
-
----
 
 ## 40. Références techniques
 
