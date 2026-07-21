@@ -1434,27 +1434,6 @@ MongoDB, OpenSearch et le Data Node restent internes au serveur Graylog dans le 
 
 # Partie N — Preuves à conserver
 
-## 55. Captures et résultats utiles
-
-Conserver :
-
-1. l’état `RUNNING` de l’input Syslog UDP ;
-2. le port UDP 5140 en écoute ;
-3. le port UDP 1514 en écoute ;
-4. le contenu de `/var/log/logs_centralises` ;
-5. le message de test envoyé depuis Debian ;
-6. le même message visible dans Graylog ;
-7. le message de test Windows transmis par NXLog ;
-8. les deux streams avec leurs règles ;
-9. chaque stream contenant les messages de sa machine ;
-10. l’Event Definition d’erreur ;
-11. un événement d’erreur généré par le test ;
-12. la recherche indiquant la source, le message et l’heure ;
-13. l’état des services Graylog ;
-14. le résultat de `df -h` ;
-15. l’incident de disque plein et le résultat après correction.
-
----
 
 # Partie O — État final
 
@@ -1473,45 +1452,6 @@ Conserver :
 
 ---
 
-## 57. Éléments non présentés comme validés
-
-Les éléments suivants ne sont pas présentés comme finalisés faute de preuve suffisante :
-
-- envoi des alertes par courriel ;
-- publication HTTPS définitive de Graylog ;
-- sauvegarde automatisée de la base MongoDB ;
-- restauration complète testée ;
-- politique de rétention Graylog définitive ;
-- haute disponibilité ;
-- chiffrement TLS des flux Syslog.
-
-Ces éléments correspondent à des améliorations possibles, mais pas à des actions validées dans le laboratoire décrit ici.
-
----
-
-## 58. Correspondance avec le REAC TSSR
-
-Cette configuration mobilise principalement :
-
-- **CP3 — Exploiter des serveurs Linux** :
-  gestion des services, des journaux, des droits et des fichiers ;
-
-- **CP4 — Exploiter un réseau IP** :
-  contrôle des flux, des ports, de l’adressage et du filtrage ;
-
-- **CP5 — Maintenir des serveurs dans une infrastructure virtualisée** :
-  exploitation de la VM Graylog sous Proxmox ;
-
-- **CP7 — Maintenir et sécuriser les accès à Internet et les interconnexions des réseaux** :
-  journalisation et traçabilité des événements ;
-
-- **Compétence transversale — Mettre en œuvre une démarche de résolution de problème** :
-  vérification de la connectivité, des services, des ports, des journaux et du stockage ;
-
-- **Compétence transversale — Communiquer** :
-  rédaction et mise à jour d’un document d’exploitation.
-
----
 
 ## 59. Conclusion
 
