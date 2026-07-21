@@ -684,20 +684,4 @@ Ces étapes sont documentées dans `configuration.md`.
 
 ---
 
-## 24. Correspondance avec le REAC TSSR
 
-Cette installation mobilise principalement les compétences suivantes :
-
-- **Exploiter des serveurs Linux** : installation des paquets, gestion des services, réseau, journaux et droits ;
-- **Exploiter un réseau IP** : adresse statique, masque, passerelle, DNS et tests de connectivité ;
-- **Maintenir des serveurs dans une infrastructure virtualisée** : création et exploitation d’une VM sous Proxmox ;
-- **Maintenir et sécuriser les accès à Internet et les interconnexions des réseaux** : préparation d’un service d’authentification centralisé ;
-- **Mettre en œuvre une démarche de résolution de problème** : vérification par étapes du réseau, du service, des ports et des journaux.
-
----
-
-## 25. Conclusion
-
-Le serveur FreeRADIUS a été installé sur une VM Debian 13 hébergée par Proxmox. Son fonctionnement de base a été validé grâce au contrôle du service, des ports UDP, de la syntaxe et d’un test d’authentification local.
-
-Le serveur est prêt à être intégré à pfSense et à l’Active Directory du domaine `pharmgreen.lan`.
