@@ -799,35 +799,7 @@ Cette amélioration n’a pas été validée dans l’état final réel du labor
 
 ---
 
-## 32. Preuves à conserver
 
-- résultat de `freeradius -XC` ;
-- démarrage de `freeradius -X` avec `Ready to process requests` ;
-- `Bind as user ... was successful` ;
-- appartenance de `U00180` au groupe `GrpAccesInternetRestreint` ;
-- ligne `Session-Timeout = 300` ;
-- ligne `Sent Access-Accept` ;
-- test réussi dans `Diagnostics > Authentication` ;
-- configuration IP du client Guest ;
-- session `U00180` visible dans `Status > Captive Portal` ;
-- disparition de la session après cinq minutes ;
-- réapparition de la page du portail captif.
-
----
-
-## 33. Correspondance avec le REAC TSSR
-
-Cette configuration mobilise les compétences suivantes :
-
-- **Exploiter des serveurs Windows et un domaine Active Directory** ;
-- **Exploiter des serveurs Linux** ;
-- **Exploiter un réseau IP** ;
-- **Maintenir des serveurs dans une infrastructure virtualisée** ;
-- **Maintenir et sécuriser les accès à Internet et les interconnexions des réseaux** ;
-- **Mettre en œuvre une démarche structurée de résolution de problème** ;
-- **Mettre à jour les documents d’exploitation**.
-
----
 
 ## 34. Conclusion
 
