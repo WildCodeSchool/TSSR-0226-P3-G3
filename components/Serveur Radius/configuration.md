@@ -74,30 +74,7 @@ flowchart LR
 
 ---
 
-## 5. État final réellement validé
 
-Les éléments suivants ont été testés avec succès :
-
-- pfSense communique avec FreeRADIUS sur UDP 1812 ;
-- FreeRADIUS trouve les utilisateurs grâce à l’attribut `sAMAccountName` ;
-- le mot de passe de l’utilisateur est contrôlé par un bind LDAP ;
-- FreeRADIUS lit l’attribut `memberOf` ;
-- `U00180` est reconnu comme membre de `GrpAccesInternetRestreint` ;
-- FreeRADIUS renvoie `Access-Accept` et `Session-Timeout = 300` ;
-- pfSense ouvre la session ;
-- la session disparaît après cinq minutes ;
-- le portail captif demande de nouveau une authentification.
-
-### Points non finalisés dans le laboratoire
-
-La validation finale du laboratoire a été effectuée avec :
-
-- le compte `Administrator` comme compte de lecture LDAP ;
-- `require_cert = 'never'` pour contourner temporairement l’erreur de vérification du certificat.
-
-Ces deux éléments sont acceptables uniquement dans un laboratoire. Ils doivent être corrigés avant une mise en production.
-
----
 
 # Partie A — Configuration de pfSense avant FreeRADIUS
 
