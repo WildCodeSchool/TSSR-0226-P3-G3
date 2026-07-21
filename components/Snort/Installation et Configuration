@@ -76,9 +76,11 @@ curl http://testmyids.com/
 
 Exemples d'Alertes constatées :
 
+![Alertes](./components/Snort/Ressource/Alertes.png)
+
 Exemples d'adresses bloquées :
 
-
+![Blocages](./components/Snort/Ressource/Blocages.png)
 
 Note : un simple ping ICMP ou un `nmap -sT` (connect scan poli) ne déclenchent généralement **aucune alerte** avec les catégories de base ci-dessus — c'est normal, pas un signe de mauvaise config.
 
